@@ -1,0 +1,110 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkTree documentation</title>
+<BODY>
+<h1>xbkTree</h1></font>
+<p>The xbkTree class display information in a hierarchal tree system.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.2
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkTree' >
+<hr class='methodHR'>
+<font class='methodName'>xbkTree(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkMenu.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The parent of the xbkMenu object if it has one.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='getSelectedNode' >
+<hr class='methodHR'>
+<font class='methodName'>getSelectedNode(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Get the current selected xbkTreeNode.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>xbkTreeNode</font>
+<font class='paramComment'></font>
+</a>
+<a name='setImagePath' >
+<hr class='methodHR'>
+<font class='methodName'>setImagePath(</font><font class='paramType'>String</font> <font class='paramFieldName'>path</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the path for the image location folder.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>path</font> 
+<br><font class='paramComment'>location of images folder.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='getChildNode' >
+<hr class='methodHR'>
+<font class='methodName'>getChildNode(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font>, <font class='paramType'>String</font> <font class='paramFieldName'>img</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Creates a child xbkTreeNode and return it.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text that appears for the item.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Reference to a handler function for this xbkTreeNode.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>img</font> 
+<br><font class='paramComment'>Image to use.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>xbkTreeNode</font>
+<font class='paramComment'>Reference to a xbkTreeNode note: see xbkTreeNode class</font>
+</a>
+<a name='getParentNode' >
+<hr class='methodHR'>
+<font class='methodName'>getParentNode(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font>, <font class='paramType'>String</font> <font class='paramFieldName'>closeImg</font>, <font class='paramType'>String</font> <font class='paramFieldName'>openImg</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Creates a parent xbkTreeNode and return it.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text that appears for the item.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Reference to a handler function for this xbkTreeNode.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>closeImg</font> 
+<br><font class='paramComment'>Image to use for folder close.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>openImg</font> 
+<br><font class='paramComment'>Image to use for folder open.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>xbkTreeNode</font>
+<font class='paramComment'>Reference to a xbkTreeNode note: see xbkTreeNode class</font>
+</a>
+<a name='addRoot' >
+<hr class='methodHR'>
+<font class='methodName'>addRoot(</font><font class='paramType'>xbkTreeNode</font> <font class='paramFieldName'>node</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Add a root xbkTreeNode to the current xbkTree.</font>
+<li><font class='paramType'>xbkTreeNode</font>
+<font class='paramFieldName'>node</font> 
+<br><font class='paramComment'>A xbkTreeNode to be added to the root level.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='removeNode' >
+<hr class='methodHR'>
+<font class='methodName'>removeNode(</font><font class='paramType'>String</font> <font class='paramFieldName'>id</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Remove a node by id from the current xbkTree.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>id</font> 
+<br><font class='paramComment'></font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='draw' >
+<hr class='methodHR'>
+<font class='methodName'>draw(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Draw the xbkTree.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkTree.html'class='elink'>xbkTree</a>
+</BODY>

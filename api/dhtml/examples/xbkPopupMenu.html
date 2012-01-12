@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkPopupMenu</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/ui/xbkPopupMenu/xbkPopupMenu.js'></script>
+	<LINK REL='stylesheet' HREF='../src/css/xbkMenu.css' TYPE='text/css'>	<style>
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	<!-- source script... this block MUST be separate from the block above -->
+	<script>
+		var myMenu = null;
+		
+		function init() {
+
+			myMenu = new xbkPopupMenu();
+			with ( myMenu ) {
+				setLeft( 100 );
+				setTop( 50 );
+				setWidth( 200 );
+				setHeight( 300 );
+				setVis("show");
+		
+				setBgColor("#D6D3CE");
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderTop( 1,"#D6D3CE");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				
+				addItem( "New" , NEW_HANDLER );
+				addItem( "Open" , OPEN_HANDLER );
+				addItem( "Print" , PRINT_HANDLER );
+				addBar();
+				addItem( "Close" , CLOSE_HANDLER  );
+			}
+		}
+		function NEW_HANDLER() {
+			alert("click new");
+		}
+		function OPEN_HANDLER() {
+			alert("click open");
+		}
+		function PRINT_HANDLER() {
+			alert("click print");
+		}
+		function CLOSE_HANDLER() {
+			alert("click close");
+		}	</script>
+</head>
+<body bgcolor="white" onload="init();">
+	<h1> Example --> xbkPopupMenu</h1>
+	<a href="javascript:myMenu.setVis('hidden')">hide</a><br>
+	<a href="javascript:myMenu.setVis('show')">show</a><br>
+</body>
+</html>

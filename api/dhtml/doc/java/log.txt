@@ -1,0 +1,10 @@
+From       : xbExample.js
+Method     : SPC
+Description: xbExample  	  	Class Description goes here
+Scope      : null
+
+From       : xbExample.js
+Method     : MethodName
+Description: METHOD_Description
+Scope      : public
+

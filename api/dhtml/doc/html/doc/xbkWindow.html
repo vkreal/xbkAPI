@@ -1,0 +1,82 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkWindow documentation</title>
+<BODY>
+<h1>xbkWindow</h1></font>
+<p>The xbkWindow Class creates a window like look and feel tool for any xbkAPI web applications.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.1
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkWindow' >
+<hr class='methodHR'>
+<font class='methodName'>xbkWindow(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkWindow.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The windows parent, if any.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='setWindowTitle' >
+<hr class='methodHR'>
+<font class='methodName'>setWindowTitle(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>String</font> <font class='paramFieldName'>style</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the title and style for the xbkWindow.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text for the title.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>style</font> 
+<br><font class='paramComment'>The class style name.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setCloseWindowHandler' >
+<hr class='methodHR'>
+<font class='methodName'>setCloseWindowHandler(</font><font class='paramType'>Handler</font> <font class='paramFieldName'>func</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the close window handler.</font>
+<li><font class='paramType'>Handler</font>
+<font class='paramFieldName'>func</font> 
+<br><font class='paramComment'>Handler to be call when the window close.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setMinWindowHandler' >
+<hr class='methodHR'>
+<font class='methodName'>setMinWindowHandler(</font><font class='paramType'>Handler</font> <font class='paramFieldName'>func</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the minimize window handler.</font>
+<li><font class='paramType'>Handler</font>
+<font class='paramFieldName'>func</font> 
+<br><font class='paramComment'>Handler to be call when the window minimize.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setMaxWindowHandler' >
+<hr class='methodHR'>
+<font class='methodName'>setMaxWindowHandler(</font><font class='paramType'>Handler</font> <font class='paramFieldName'>func</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the maximize window handler.</font>
+<li><font class='paramType'>Handler</font>
+<font class='paramFieldName'>func</font> 
+<br><font class='paramComment'>Handler to be call when the window maximize.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setIconWinHandler' >
+<hr class='methodHR'>
+<font class='methodName'>setIconWinHandler(</font><font class='paramType'>Handler</font> <font class='paramFieldName'>func</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the icon click handler.</font>
+<li><font class='paramType'>Handler</font>
+<font class='paramFieldName'>func</font> 
+<br><font class='paramComment'>Handler to be call when the icon is click.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkWindow.html'class='elink'>xbkWindow</a>
+</BODY>

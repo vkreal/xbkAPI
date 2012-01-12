@@ -1,0 +1,69 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkFileExplorer documentation</title>
+<BODY>
+<h1>xbkFileExplorer</h1></font>
+<p>The xbkFileExplorer class provide a file explorer.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.0
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkFileExplorer' >
+<hr class='methodHR'>
+<font class='methodName'>xbkFileExplorer(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkFileExplorer.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The parent of the xbkFileExplorer object if it has one.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='getParentNode' >
+<hr class='methodHR'>
+<font class='methodName'>getParentNode(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font>, <font class='paramType'>String</font> <font class='paramFieldName'>closeImg</font>, <font class='paramType'>String</font> <font class='paramFieldName'>openImg</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Creates a parent xbkTreeNode Folder and return it.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text that appears for the item.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Reference to a handler function for this xbkTreeNode.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>closeImg</font> 
+<br><font class='paramComment'>Image to use for folder close.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>openImg</font> 
+<br><font class='paramComment'>Image to use for folder open.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>xbkTreeNode</font>
+<font class='paramComment'>Reference to a xbkTreeNode note: see xbkTreeNode class</font>
+</a>
+<a name='getChildNode' >
+<hr class='methodHR'>
+<font class='methodName'>getChildNode(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font>, <font class='paramType'>String</font> <font class='paramFieldName'>img</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Creates a child xbkTreeNode and return it.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text that appears for the item.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Reference to a handler function for this xbkTreeNode.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>img</font> 
+<br><font class='paramComment'>Image to use.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>xbkTreeNode</font>
+<font class='paramComment'>Reference to a xbkTreeNode note: see xbkTreeNode class</font>
+</a>
+<a name='removeSelectedItem' >
+<hr class='methodHR'>
+<font class='methodName'>removeSelectedItem(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Remove the selected item.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkFileExplorer.html'class='elink'>xbkFileExplorer</a>
+</BODY>

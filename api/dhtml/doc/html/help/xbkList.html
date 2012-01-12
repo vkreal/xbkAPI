@@ -1,0 +1,76 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+&lt;script src='../src/util/xbkNode/xbkNode.js'&gt;&lt;/script&gt;
+&lt;script src='../src/ui/xbkList/xbkList.js'&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" type="text/css" href="../src/css/xbkList.css"&gt;
+&lt;style&gt;
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+&lt;/style&gt;
+
+&lt;script&gt;
+	var list = null;
+	function init() {
+		var aHeading = new Array("Heading 1","Heading 2","Heading 3");
+		list = new xbkList( "list", null );
+		with( list ) {
+			setLeft( 150 );
+			setTop( 50 );
+			setWidth( 350 );
+			setHeight( 200 );
+			setVis( "show" );
+			//setBgColor( "yellow" );
+			setBorderLeft( 1,"black");
+			setBorderTop( 1,"black");
+			setBorderBottom( 1,"gray");
+			setBorderRight( 1,"gray");
+			addHeading( aHeading );	
+			addRow( "a1", ["row1", "row1", "row1"], xbkList_ONCLICK_HANDLER );
+			addRow( "a2", ["row2", "row2", "row2"] );
+			addRow( "a3", ["row3", "row3", "row3"] );
+			addRow( "a4", ["row4", "row4", "row4"] );
+			draw();
+		}
+	}
+	
+	function xbkList_ONCLICK_HANDLER( obj ) {
+		alert( obj.id );
+	}	
+
+	function remove() {
+		if(list.selected) {
+			list.removeRow(list.selected.id);
+		}
+	}
+	var count = 5;
+	function add() {
+		list.addRow( "a"+count, ["row"+count,"row"+count,"row"+count] );
+		count++;
+	}
+&lt;/script&gt;
+	
+&lt;body onload="init()"&gt;
+&lt;h1&gt;
+		Example  --&gt; xbkList
+&lt;/h1&gt;	
+	&lt;a href="javascript:list.setWidth(list.getWidth()+5);"&gt;resize width ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:list.setWidth(list.getWidth()-5);"&gt;resize width --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:list.setHeight(list.getHeight()+5);"&gt;resize height ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:list.setHeight(list.getHeight()-5);"&gt;resize height --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:add();"&gt;addItem&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:remove();"&gt;remove selected&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:list.setVis('show');"&gt;show&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:list.setVis('hidden');"&gt;hide&lt;/a&gt;&lt;br&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>

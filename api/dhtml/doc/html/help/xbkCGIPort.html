@@ -1,0 +1,69 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;CGI Port example&lt;/title&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src="../src/util/xbkStack/xbkStack.js"&gt;&lt;/script&gt;
+	&lt;script src="../src/util/xbkCGIPort/xbkCGIPort.js"&gt;&lt;/script&gt;
+	&lt;style&gt;
+			
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	
+	
+	&lt;script&gt;
+		var cgi_port    = null;
+
+		function init() {
+			cgi_port = new xbkCGIPort( parent.cgi_target );	
+					
+		}
+		
+		function testQuery() {
+		
+			var obj = new cgi_port.command();
+
+				
+				obj.query = "../src/util/xbkCGIPort/get_date.php?" +					
+				//obj.qsAppend( "myID1", "myParemeter1" ) + 
+				//obj.qsAppend( "myID2", "myParemeter2" ) +
+				qsRand();
+		
+				obj.returnFunc = function ( params, error ) {
+					var my_date_time = params.date + "  " + params.time;
+					if ( ns6 ) {	
+						var OutSpan = document.getElementById("myspan");
+						var temp = document.createElement("DIV");
+						OutSpan.appendChild( temp );
+						temp.innerHTML =  my_date_time;
+					}
+					else {					 
+						myspan.insertAdjacentHTML( "BeforeEnd", '&lt;span class="tabStyle"&gt;' + my_date_time + '&lt;/span&gt;' );
+					}				
+				}
+			cgi_port.add( obj );
+		}
+				
+		function moo() {
+				testQuery();
+		}
+	&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body onload="init()"&gt;
+&lt;h1&gt;Example --&gt; xbkCGIPort &lt;/h1&gt;
+&lt;a href="javascript:moo()"&gt;Call CGI script&lt;/a&gt;&lt;br&gt;
+&lt;div style="position: absolute; left: 50; top: 125; background-Color: silver; color:blue;"&gt;TARGET:&lt;/div&gt;
+&lt;div id="myspan" name="myspan" style="position: absolute; left: 50; top: 150; height: 150; width: 300; background-Color: silver;"&gt;&lt;/div&gt;
+&lt;IFRAME name="cgi_target" SRC="blank.html" style="position: absolute; left: 0; top: 60%; height: 0; width: 0;" scrolling="yes"&gt;&lt;/IFRAME&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>

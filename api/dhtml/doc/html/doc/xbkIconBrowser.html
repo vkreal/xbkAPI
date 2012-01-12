@@ -1,0 +1,109 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkIconBrowser documentation</title>
+<BODY>
+<h1>xbkIconBrowser</h1></font>
+<p>The xbkIconBrowser Class creates a file view like look and feel tool for any xbkAPI web applications.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;2.1
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkIconBrowser' >
+<hr class='methodHR'>
+<font class='methodName'>xbkIconBrowser(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkIconBrowser.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The parent of the xbkIconBrowser object if it has one.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='getSelectedNode' >
+<hr class='methodHR'>
+<font class='methodName'>getSelectedNode(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Get the current selected noe.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>node</font>
+<font class='paramComment'></font>
+</a>
+<a name='removeALL' >
+<hr class='methodHR'>
+<font class='methodName'>removeALL(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Remove all.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setHighLightColor' >
+<hr class='methodHR'>
+<font class='methodName'>setHighLightColor(</font><font class='paramType'>String</font> <font class='paramFieldName'>color</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the highlight selected color.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>color</font> 
+<br><font class='paramComment'>Color to be use.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='addItem' >
+<hr class='methodHR'>
+<font class='methodName'>addItem(</font><font class='paramType'>String</font> <font class='paramFieldName'>id</font>, <font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>URL</font> <font class='paramFieldName'>img</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Adds an icon to the xbkIconBrowser.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>id</font> 
+<br><font class='paramComment'>icon id.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Display name of the icon.</font></li>
+<li><font class='paramType'>URL</font>
+<font class='paramFieldName'>img</font> 
+<br><font class='paramComment'>of the icon image to display.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>A Function handler to be use by this icon.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>Nothing</font>
+<font class='paramComment'></font>
+</a>
+<a name='getSelectedId' >
+<hr class='methodHR'>
+<font class='methodName'>getSelectedId(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Returns the id of the icon currently selected, null if none.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>String</font>
+<font class='paramComment'></font>
+</a>
+<a name='removeItem' >
+<hr class='methodHR'>
+<font class='methodName'>removeItem(</font><font class='paramType'>String</font> <font class='paramFieldName'>id</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Remove an item from the xbkIconBrowser.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>id</font> 
+<br><font class='paramComment'>id of the icon to remove.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='sort' >
+<hr class='methodHR'>
+<font class='methodName'>sort(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Organizes all in descending alphabetical order by name.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='selectIconById' >
+<hr class='methodHR'>
+<font class='methodName'>selectIconById(</font><font class='paramType'>String</font> <font class='paramFieldName'>id</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Select an item from the xbkIconBrowser.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>id</font> 
+<br><font class='paramComment'>id of the icon to select.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkIconBrowser.html'class='elink'>xbkIconBrowser</a>
+</BODY>

@@ -1,0 +1,141 @@
+<HTML>
+<!--
+ Copyright (c) 2002 xbkapi (xbkapi@yahoo.com)
+ This library is distributed under the terms of the GNU Lesser General Public License (gnu.org).
+-->
+<title>xbkAPI FileManager DEMO</title>
+<script src='../../src/util/xbkObject/xbkObject.js'></script>
+<script src='../../src/ui/xbkLayer/xbkLayer.js'></script>
+<script src='../../src/util/xbkNode/xbkNode.js'></script>
+<script src='../../src/ui/xbkMenu/xbkMenu.js'></script>
+<script src='../../src/util/xbkTreeNode/xbkTreeNode.js'></script>
+<script src='../../src/ui/xbkTree/xbkTree.js'></script>
+<script src='../../src/ui/xbkList/xbkList.js'></script>
+<script src='../../src/ui/xbkToolBar/xbkToolBar.js'></script>
+<script src='../../src/util/xbkScroll/xbkScroll.js'></script>
+<script src='../../src/util/xbkDragAndDrop/xbkDragAndDrop.js'></script>
+<script src='../../src/ui/xbkIconBrowser/xbkIconBrowser.js'></script>
+<link rel='stylesheet' href="../../src/css/xbkList.css">
+<LINK REL='stylesheet' HREF='../../src/css/xbkMenu.css' TYPE='text/css'>
+<style>
+	.treeText {
+		font-family: tahoma;
+		font-size: 12px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: black;
+	}
+	
+	.msgHeaders{
+		font-family: tahoma;
+		font-size: 11px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: ghostwhite;
+		font-weight: bold;
+	}
+</style>
+
+<script>
+	var MAIN_MENU = null;
+	var scrl = null;
+	var scrl2 = null;
+	var dnd = null;
+	
+	var MAIN_MENU2 = null;
+	
+	function init() {
+		MAIN_MENU = new xbkToolBar( "MAIN_MENU" );
+		with ( MAIN_MENU ) {
+			setLeft( 0 );
+			setTop( 0 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 65 );
+			setVis("show");
+			setBgColor("silver");
+			//setBgColor("#D6D3CE");
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+			addItem( "images/but2_idl.gif", "images/but2_up.gif", "images/but2_dwn.gif",userDefinedFunction);
+			addItem( "images/but1_idl.gif", "images/but1_up.gif", "images/but1_dwn.gif",userDefinedFunction);
+			
+			addItem( "images/but3_idl.gif", "images/but3_up.gif", "images/but3_dwn.gif",userDefinedFunction);
+			addItem( "images/but4_idl.gif", "images/but4_up.gif", "images/but4_dwn.gif",userDefinedFunction);
+		}
+		scrl = new xbkScroll("scrl",MAIN_MENU);
+		
+		
+		MAIN_MENU2 = new xbkToolBar( "MAIN_MENU2" );
+		with ( MAIN_MENU2 ) {
+			setLeft( 0 );
+			setTop( 200 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 65 );
+			setVis("show");
+			setBgColor("silver");
+			//setBgColor("#D6D3CE");
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+		
+		}
+		
+		scrl2 = new xbkScroll("scrl2",MAIN_MENU2);
+		
+		dnd=new xbkDragAndDrop();
+		dnd.addDragSource(MAIN_MENU);
+		dnd.setDropTargetFunc( testDropFunc );
+		dnd.setOverTargetFunc( testOverFunc );
+		dnd.setOutTargetFunc( testOutFunc );
+		dnd.setStartDragFunc(testStartFunc);
+		dnd.setUseImageAsDragIcon(true);
+		dnd.addTarget(MAIN_MENU2);
+	}
+	
+	function startScroll(){
+		scrl.scroll();
+		scrl2.scroll();
+	}
+
+	function testStartFunc ( DnDobj, target ) {
+		if(!dnd.getSelectItem()) {
+				return false;
+		}
+		else {
+				return true;
+		}
+	}
+
+	function testDropFunc(DnDobj,target) {
+		target.setBgColor("silver");
+		var node=dnd.getSelectItem();
+		if(node){
+			target.addItem( node.img, node.imgOver, node.imgDown);
+		}
+		//(node)?target.setInnerHTML(node.img):null;
+		dnd.setSelectItem(null);
+	}
+	
+	function testOverFunc( DnDobj , target) {
+		target.setBgColor("gray");
+	}
+		
+	function testOutFunc( DnDobj , target ) {
+		target.setBgColor("silver");
+	}
+	function userDefinedFunction(id) {
+		dnd.setSelectItem(xbkNode.all[id]);
+	}
+
+</script>
+
+
+
+
+<BODY onload="init();" onscroll="startScroll()" ondragstart="return false" onselectstart="return false">
+<DIV style="height:1000px; width:1000px;"></DIV>
+</BODY>
+</HTML>

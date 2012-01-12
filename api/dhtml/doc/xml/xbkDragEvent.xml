@@ -1,0 +1,100 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkDragEvent" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+This xbkDragEvent class handles the drag event for the xbkLayer Class Object.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkDragEvent" comment="" >
+<method_desc>  </method_desc>
+<params>
+</params>
+</method>
+</constructor>
+<methods>
+<method name="getDragxbkLayerById" comment="" >
+<method_desc>
+<![CDATA[
+Get the Draggable xbkLayer by id.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="xbkLayer" comment="" ></return>
+</method>
+<method name="getAppWidth" comment="" >
+<method_desc>
+<![CDATA[
+Get the current application window width.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getAppHeight" comment="" >
+<method_desc>
+<![CDATA[
+Get the current application window width.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="setBoundedByWindow" comment="" >
+<method_desc>
+<![CDATA[
+set the drag boundary to the current window.
+]]>
+</method_desc>
+<params>
+<param name="bool" typename="Boolean" comment="" />
+</params>
+<return typename="Nothing" comment="" ></return>
+</method>
+<method name="enableDragEvent" comment="" >
+<method_desc>
+<![CDATA[
+enable a drag event
+]]>
+</method_desc>
+<params>
+<param name="obj" typename="xbkLayer" comment="a reference to a xbkLayer" />
+</params>
+<return typename="Nothing" comment="" ></return>
+</method>
+<method name="disableDragEvent" comment="" >
+<method_desc>
+<![CDATA[
+disable a drag event for a specific xbkLayer.
+]]>
+</method_desc>
+<params>
+<param name="obj" typename="xbkLayer" comment="a reference to a xbkLayer" />
+</params>
+<return typename="Nothing" comment="" ></return>
+</method>
+<method name="setBoundedToParent" comment="" >
+<method_desc>
+<![CDATA[
+set bounded to parent, so when sibling is move the parent moves too
+]]>
+</method_desc>
+<params>
+<param name="bool" typename="Boolean" comment="" />
+</params>
+<return typename="Nothing" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="xbkObject" />
+</class>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- edk descriptor dtd -->
+
+<!-- root level tag: class -->
+<!ELEMENT class (desc,fields,constructor?,methods?,related,examples,extends?) >
+<!ATTLIST class
+	name NMTOKEN #REQUIRED 
+	version NMTOKEN #IMPLIED
+	since NMTOKEN #IMPLIED 
+	>
+<!-- desc tag -->
+<!ELEMENT desc (#PCDATA)>
+
+<!-- fields tag -->
+<!ELEMENT fields (param)* >
+
+<!-- constructor -->
+<!ELEMENT constructor (method)>
+
+
+
+<!-- methods tag -->
+<!ELEMENT methods (method)* >
+
+	<!-- method tag -->
+	<!ELEMENT method (method_desc,params,return?) >
+	<!ATTLIST method
+			name NMTOKEN #REQUIRED 
+			comment CDATA #IMPLIED
+		> 
+	
+		<!-- method_desc tag -->
+		<!ELEMENT method_desc (#PCDATA) >
+	
+		<!-- params tag -->
+		<!ELEMENT params (param)* >
+			<!ELEMENT param EMPTY >
+			<!ATTLIST param
+				name NMTOKEN #REQUIRED 
+				typename NMTOKEN #REQUIRED
+				comment CDATA #IMPLIED
+			>
+		
+		<!-- return tag -->
+		<!ELEMENT return EMPTY >
+		<!ATTLIST return
+				typename NMTOKEN #REQUIRED
+				comment CDATA #IMPLIED
+		>
+
+<!ELEMENT related (ref)* >
+	<!ELEMENT ref EMPTY >
+	<!ATTLIST ref
+		url CDATA #REQUIRED 
+		name NMTOKEN #REQUIRED 
+		comment CDATA #IMPLIED
+	>
+
+<!ELEMENT examples (example)* >
+	<!ELEMENT example EMPTY >
+	<!ATTLIST example
+		url CDATA #REQUIRED 
+		title CDATA #REQUIRED
+		comment CDATA #IMPLIED
+	>	
+						
+<!ELEMENT extends EMPTY >
+<!ATTLIST extends 
+	name NMTOKEN #REQUIRED
+>

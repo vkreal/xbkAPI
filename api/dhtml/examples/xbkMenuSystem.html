@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkMenuSystem</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/util/xbkNode/xbkNode.js'></script>
+	<script src='../src/ui/xbkMenu/xbkMenu.js'></script>
+	<script src='../src/ui/xbkMenuSystem/xbkMenuSystem.js'></script>
+	<LINK REL='stylesheet' HREF='../src/css/xbkMenu.css' TYPE='text/css'>
+
+	<style>
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	<!-- source script... this block MUST be separate from the block above -->
+	<script>
+		var myMenuSystem = null;
+		
+		function init() {
+
+			myMenuSystem = new xbkMenuSystem("myMenuSystem", null);
+			with ( myMenuSystem ) {
+				setLeft( 50 );
+				setTop( 50 );
+				setWidth( 200 );
+				setHeight( 300 );
+				setVis("hidden");
+		
+				setBgColor("#D6D3CE");
+				//setBorderLeft( 1,"#D6D3CE");
+				//setBorderTop( 1,"#D6D3CE");
+				//setBorderRight( 1,"black");
+				//setBorderBottom( 1,"black");
+				setMouseOverHightLight( true );
+				
+				var item_0 = addRoot( "File" , FILE_HANDLER );
+				item_0.addItem("New", NEW_HANDLER);
+				item_0.addItem("Open", null);
+				item_0.addItem("Close", null);
+				item_0.setMouseOverHightLight( true );
+
+				var item_1 = addRoot( "Edit" , null );
+				item_1.addItem("Cut", null);
+				item_1.addItem("Copy", null);
+				item_1.addItem("Paste", null);
+				item_1.setMouseOverHightLight( true );	
+				
+				var item_2 = addRoot( "Options" , null );
+				item_2.addItem("Number", null);
+				item_2.addItem("Indent", null);
+				item_2.addItem("Move", null);	
+				item_2.setMouseOverHightLight( true );
+				
+				var item_3 = addRoot( "Help" , null  );
+				item_3.addItem("About", null);
+				item_3.setMouseOverHightLight( true );
+			}
+		}
+
+		function FILE_HANDLER () {
+		
+		}
+		function NEW_HANDLER() {
+			alert("click...");
+		}
+		function OPEN_HANDLER() {
+			//alert("click Edit");
+		}
+		function PRINT_HANDLER() {
+			//alert("click View");
+		}
+		function CLOSE_HANDLER() {
+			//alert("click Help");
+		}
+
+	</script>
+</head>
+
+
+<body bgcolor="white" onload="init();">
+	<h1> Example --> xbkMenuSystem</h1>
+</body>
+
+
+</html>
+
+

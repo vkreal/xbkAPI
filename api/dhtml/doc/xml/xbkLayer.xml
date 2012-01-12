@@ -1,0 +1,419 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkLayer" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+The xbkLayer class is the base class for most visual controls in the xbkAPI. The xbkLayer can be positioned anywhere on screen and it supports background and border colors. Combined with other classes, xbkLayer provide the infrastructure of a web application.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkLayer" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="parent" typename="xbkLayer" comment="parent xbkLayer of the current xbkLayer object" />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="getLayer" comment="" >
+<method_desc>
+<![CDATA[
+Get the layer object that was created by DOM
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="layer" comment="" ></return>
+</method>
+<method name="getLeft" comment="" >
+<method_desc>
+<![CDATA[
+Get the current left position in pixels.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getTop" comment="" >
+<method_desc>
+<![CDATA[
+Get the top position in pixels.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getWidth" comment="" >
+<method_desc>
+<![CDATA[
+Get the width.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getHeight" comment="" >
+<method_desc>
+<![CDATA[
+Get the height.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getClipLeft" comment="" >
+<method_desc>
+<![CDATA[
+Get the clip left.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getClipRight" comment="" >
+<method_desc>
+<![CDATA[
+Get the clip right.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getClipTop" comment="" >
+<method_desc>
+<![CDATA[
+Get the clip top.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getClipBottom" comment="" >
+<method_desc>
+<![CDATA[
+Get the clip bottom.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="getParent" comment="" >
+<method_desc>
+<![CDATA[
+Get the xbkLayer parent.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="xbkLayer" comment="" ></return>
+</method>
+<method name="getZIdex" comment="" >
+<method_desc>
+<![CDATA[
+Get the z-index of the xbkLayer.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="setLeft" comment="" >
+<method_desc>
+<![CDATA[
+Set the left.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="The number of pixels to set left." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setTop" comment="" >
+<method_desc>
+<![CDATA[
+Set the top.
+]]>
+</method_desc>
+<params>
+<param name="nume" typename="Number" comment="Set the number of pixels to top." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setWidth" comment="" >
+<method_desc>
+<![CDATA[
+Set the width
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Set the number of pixels to width." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setHeight" comment="" >
+<method_desc>
+<![CDATA[
+Set the height.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Set the number of pixels to height." />
+</params>
+<return typename="Number" comment="" ></return>
+</method>
+<method name="setClipLeft" comment="" >
+<method_desc>
+<![CDATA[
+Set the clip left.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Set the number of pixels to set clip left." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setClipRight" comment="" >
+<method_desc>
+<![CDATA[
+Set the clip right.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Set the number of pixels to set clip right." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setClipBottom" comment="" >
+<method_desc>
+<![CDATA[
+Set the clip bottom.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Set the number of pixels to set clip bottom." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setClipTop" comment="" >
+<method_desc>
+<![CDATA[
+Set the clip top.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Set the number of pixels to set clip top." />
+<param name="number" typename="integer" comment="paramComment" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setVis" comment="" >
+<method_desc>
+<![CDATA[
+Set the visibility.
+]]>
+</method_desc>
+<params>
+<param name="type" typename="String" comment="Params: [hidden|inherit|show]" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setBgColor" comment="" >
+<method_desc>
+<![CDATA[
+Set the background color
+]]>
+</method_desc>
+<params>
+<param name="color" typename="String" comment="The color to be use." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setOverflow" comment="" >
+<method_desc>
+<![CDATA[
+Set the CSS of the xbkLayer overflow attribute.
+]]>
+</method_desc>
+<params>
+<param name="sType" typename="String" comment="[ scroll | hidden | auto ]" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="getBgColor" comment="" >
+<method_desc>
+<![CDATA[
+Get the background color
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="String" comment="" ></return>
+</method>
+<method name="setBorderLeft" comment="" >
+<method_desc>
+<![CDATA[
+Set the border of the left side.
+]]>
+</method_desc>
+<params>
+<param name="width" typename="Number" comment="The number in pixels of the width." />
+<param name="color" typename="String" comment="The color to be use." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setBorderTop" comment="" >
+<method_desc>
+<![CDATA[
+Set the border of the top side.
+]]>
+</method_desc>
+<params>
+<param name="width" typename="Number" comment="The number in pixels of the width." />
+<param name="color" typename="String" comment="The color to be use." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setBorderRight" comment="" >
+<method_desc>
+<![CDATA[
+Set the border of the right side.
+]]>
+</method_desc>
+<params>
+<param name="width" typename="Number" comment="The number in pixels of the width." />
+<param name="color" typename="String" comment="The color to be use." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setBorderBottom" comment="" >
+<method_desc>
+<![CDATA[
+Set the border of the bottom side.
+]]>
+</method_desc>
+<params>
+<param name="width" typename="Number" comment="The number in pixels of the width." />
+<param name="color" typename="String" comment="The color to be use." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setInnerHTML" comment="" >
+<method_desc>
+<![CDATA[
+Set the inner html of the xbkLayer.
+]]>
+</method_desc>
+<params>
+<param name="html" typename="String" comment="html to be use." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setEvent" comment="" >
+<method_desc>
+<![CDATA[
+Set the event for the xbkLayer.
+]]>
+</method_desc>
+<params>
+<param name="type" typename="String" comment="Params: [onmouseup|onclick|onmousedown|onmouseover|onmouseout|onmousemove]" />
+<param name="func" typename="Handler" comment="Reference to a function handler" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setZIndex" comment="" >
+<method_desc>
+<![CDATA[
+Set the z-index.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="moveAboveBygetZIndex" comment="" >
+<method_desc>
+<![CDATA[
+Move above the current xbkLayer pass in as a parameter.
+]]>
+</method_desc>
+<params>
+<param name="obj" typename="xbkLayer" comment="The xbkLayer to move above" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="moveBelowBygetZIndex" comment="" >
+<method_desc>
+<![CDATA[
+Move below the current xbkLayer pass in as a parameter.
+]]>
+</method_desc>
+<params>
+<param name="sname" typename="string" comment="paramComment" />
+<param name="obj" typename="xbkLayer" comment="The xbkLayer to move below" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="moveTo" comment="" >
+<method_desc>
+<![CDATA[
+Move xbkLayer to x-y position.
+]]>
+</method_desc>
+<params>
+<param name="x" typename="Number" comment="Move x pixels" />
+<param name="y" typename="Number" comment="Move y pixels" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="moveBy" comment="" >
+<method_desc>
+<![CDATA[
+Move xbkLayer by deltaX and deltaY.
+]]>
+</method_desc>
+<params>
+<param name="x" typename="Number" comment="Move by x pixels" />
+<param name="y" typename="Number" comment="Move by y pixels" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="getElementById" comment="" >
+<method_desc>
+<![CDATA[
+Get xbkLayer by id.
+]]>
+</method_desc>
+<params>
+<param name="id" typename="String" comment="The id to by use to find the xbkLayer object" />
+</params>
+<return typename="xbkLayer" comment="" ></return>
+</method>
+<method name="getCSS" comment="" >
+<method_desc>
+<![CDATA[
+Get the css object of the xbkLayer.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="CSS" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="xbkObject" />
+</class>

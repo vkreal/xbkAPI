@@ -1,0 +1,3 @@
+cls
+rem compiling js parser....
+javac net/kreal/js/*.java

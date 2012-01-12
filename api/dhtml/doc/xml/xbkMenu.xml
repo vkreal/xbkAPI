@@ -1,0 +1,126 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkMenu" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+The xbkMenu class provides a horizontal or vertical menu system.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkMenu" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkMenu." />
+<param name="parent" typename="xbkLayer" comment="The parent of the xbkMenu object if it has one." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="hideALLxbkMenu" comment="" >
+<method_desc>
+<![CDATA[
+Hide all the xbkMenu.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="autostrechHorizontal" comment="" >
+<method_desc>
+<![CDATA[
+Autostrech horizontal.
+]]>
+</method_desc>
+<params>
+<param name="bType" typename="Boolean" comment="Set to true or false." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="autostrechVertical" comment="" >
+<method_desc>
+<![CDATA[
+Autostrech vertical.
+]]>
+</method_desc>
+<params>
+<param name="bType" typename="Boolean" comment="Set to true or false." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setVis" comment="" >
+<method_desc>
+<![CDATA[
+Set the xbkMenu visibility and x,y location.
+]]>
+</method_desc>
+<params>
+<param name="type" typename="String" comment="[show|hidden|inherit]" />
+<param name="x" typename="Number" comment="location x" />
+<param name="y" typename="Number" comment="location y" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setHorizontalMenu" comment="" >
+<method_desc>
+<![CDATA[
+Set menu to be horizontal or vertical, default is horizontal.
+]]>
+</method_desc>
+<params>
+<param name="bType" typename="Boolean" comment="Set to true or false." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="addItem" comment="" >
+<method_desc>
+<![CDATA[
+Adds an item to the Menu.
+]]>
+</method_desc>
+<params>
+<param name="text" typename="String" comment="Text that appears for the item." />
+<param name="fHandler" typename="Reference" comment="Referece to a handler function." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="addBar" comment="" >
+<method_desc>
+<![CDATA[
+Adds a separator to divide groups of menu commands.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setMouseOverHightLight" comment="" >
+<method_desc>
+<![CDATA[
+Set the mouseover event to hightlight the selections.
+]]>
+</method_desc>
+<params>
+<param name="bType" typename="Boolean" comment="" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="draw" comment="" >
+<method_desc>
+<![CDATA[
+Draw the xbkMenu
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="None" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+</examples>
+<extends name="xbkLayer" />
+</class>

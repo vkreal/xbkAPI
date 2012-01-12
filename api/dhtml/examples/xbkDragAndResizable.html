@@ -1,0 +1,56 @@
+<html>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/util/xbkDragEvent/xbkDragEvent.js'></script>
+	<style>
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	<script>
+		drag = 0	
+		move = 0
+		var outer = null;
+		var inner = null;
+		function init() {
+			outer = new xbkLayer();
+			with( outer ) {
+				setLeft( 200 );
+				setTop( 100 );
+				setWidth( 200 );
+				setHeight( 50 );
+				setBgColor("silver");
+				setVis( "show" );
+			}
+
+			inner = new xbkLayer(outer);
+			with( inner ) {
+				setLeft( outer.getWidth()-25 );
+				setTop(25);
+				setWidth( 25 );
+				setHeight( 25 );
+				setBgColor("red");
+				setVis( "show" );
+			}
+			
+			drag = new xbkDragEvent();
+			drag.enableDragEvent(inner);
+			drag.setBoundedToParent(true);
+
+		}
+	</script>
+	<body onload="init()">
+	<h1>
+		Example  --> xbkLayer
+	</h1>
+	<a href="javascript:layer.setWidth(layer.getWidth()+5);">resize width ++</a><br>
+	<a href="javascript:layer.setWidth(layer.getWidth()-5);">resize width --</a><br>
+	<a href="javascript:layer.setHeight(layer.getHeight()+5);">resize height ++</a><br>
+	<a href="javascript:layer.setHeight(layer.getHeight()-5);">resize height --</a><br>
+	<a href="javascript:layer.setVis('show');">show</a><br>
+	<a href="javascript:layer.setVis('hidden');">hide</a><br>	
+	</body>
+</html>

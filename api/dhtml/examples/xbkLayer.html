@@ -1,0 +1,46 @@
+<html>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<style>
+		
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	<script>
+		var layer = null;
+		function init() {
+			layer = new xbkLayer();
+			with( layer ) {
+				setLeft( 200 );
+				setTop( 100 );
+				setWidth( 100 );
+				setHeight( 100 );
+				setBgColor("silver");
+				setBorderLeft( 1,"red");
+				setBorderTop( 1,"red");
+				setBorderBottom( 1,"black");
+				setBorderRight( 1,"black");
+				setVis( "show" );
+			}
+		}
+		
+		function myclick() {
+			//alert("click..");
+		}
+	</script>
+	<body onload="init()">
+	<h1>
+		Example  --> xbkLayer
+	</h1>
+	<a href="javascript:layer.setWidth(layer.getWidth()+5);">resize width ++</a><br>
+	<a href="javascript:layer.setWidth(layer.getWidth()-5);">resize width --</a><br>
+	<a href="javascript:layer.setHeight(layer.getHeight()+5);">resize height ++</a><br>
+	<a href="javascript:layer.setHeight(layer.getHeight()-5);">resize height --</a><br>
+	<a href="javascript:layer.setVis('show');">show</a><br>
+	<a href="javascript:layer.setVis('hidden');">hide</a><br>	
+	</body>
+</html>

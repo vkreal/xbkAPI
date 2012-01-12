@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkToolBar</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/util/xbkNode/xbkNode.js'></script>
+	<script src='../src/ui/xbkToolBar/xbkToolBar.js'></script>
+
+	<style>
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	<!-- source script... this block MUST be separate from the block above -->
+	<script>
+		var toolbar = null;
+		var toolbar2 = null;
+		function init() {
+
+			toolbar = new xbkToolBar("toolbar");
+			with ( toolbar ) {
+				setLeft( 100 );
+				setTop( 100 );
+				setWidth( 200 );
+				setHeight( 27 );
+				setVis("show");
+				setBgColor("#D6D3CE");
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderTop( 1,"#D6D3CE");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				addItem( "../images/xbkToolBar/Back_dis.gif", "../images/xbkToolBar/Back_up.gif", "../images/xbkToolBar/Back_sel.gif", ONCLICK_HANDLER);
+				addItem( "../images/xbkToolBar/Forw_dis.gif", "../images/xbkToolBar/Forw_up.gif", "../images/xbkToolBar/Forw_sel.gif", null);
+				addItem( "../images/xbkToolBar/Prnt_up.gif", "../images/xbkToolBar/Prnt_dep.gif", "../images/xbkToolBar/Prnt_sel.gif", null);
+				addItem( "../images/xbkToolBar/Exit_up.gif", "../images/xbkToolBar/Exit_dep.gif", "../images/xbkToolBar/Exit_sel.gif", null);
+			}
+		
+			toolbar2 = new xbkToolBar("toolbar2");
+			with ( toolbar2 ) {
+				setLeft( 50 );
+				setTop( 100 );
+				setWidth( 25 );
+				setHeight( 200 );
+				setHorizontalToolBar(false);
+				setVis("show");
+				setBgColor("#D6D3CE");
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderTop( 1,"#D6D3CE");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				addItem( "../images/xbkToolBar/Back_dis.gif", "../images/xbkToolBar/Back_up.gif", "../images/xbkToolBar/Back_sel.gif", ONCLICK_HANDLER);
+				addItem( "../images/xbkToolBar/Forw_dis.gif", "../images/xbkToolBar/Forw_up.gif", "../images/xbkToolBar/Forw_sel.gif", null);
+				addItem( "../images/xbkToolBar/Prnt_up.gif", "../images/xbkToolBar/Prnt_dep.gif", "../images/xbkToolBar/Prnt_sel.gif", null);
+				addItem( "../images/xbkToolBar/Exit_up.gif", "../images/xbkToolBar/Exit_dep.gif", "../images/xbkToolBar/Exit_sel.gif", null);
+			}
+
+		}
+		function ONCLICK_HANDLER() {
+			alert("click...");
+		}
+		
+
+	</script>
+</head>
+
+
+<body bgcolor="white" onload="init();">
+	<h1> Example --> xbkToolBar</h1>
+</body>
+
+
+</html>

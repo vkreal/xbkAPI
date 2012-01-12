@@ -1,0 +1,25 @@
+.itemCss {
+	padding-top: 0;
+	padding-left: 15;
+	padding-right: 5;
+	font-family:verdana,sans-serif,arial; 
+	font-size: 8pt;
+	cursor: default;
+	text-decoration: none;
+	color: black;
+}
+.barCss {
+	border-bottom: 1px solid white;
+	border-top: 1px solid #848284;
+	border-left: 0px solid #848284;
+	border-right: 0px solid #848284;
+	cursor: default;	
+}
+.menuCont {
+	border-top: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid #848284;
+	border-bottom: 1px solid #848284;
+	padding: 3;
+	cursor: default;
+}	

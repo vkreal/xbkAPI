@@ -1,0 +1,32 @@
+h1 { font-family:verdana,arial,sans-serif; font-size:18px; color:#333fff; background:#ffffff; border-bottom:2px dotted #000000; }
+h2 { font-family:verdana,arial,sans-serif; font-size:16px; color:black; background:#EBFFED; padding:0px;} /* border:1px inset; background:#F1F1F1;*/
+h3 { font-family:verdana,arial,sans-serif; font-size:14px; color:green; background:#ffffff; }
+.xbkContentBody{ 
+		margin-left:2%; 
+		margin-right:2%; 
+		margin-top:2%; 
+		margin-bottom:2%; 
+		color:#000000; 
+		background:#ffffff; 
+		font-size:12px;
+		padding:2px; 
+		font-family:verdana,arial,sans-serif,helvetica;
+}
+p { 
+	font-family:verdana,arial,sans-serif; 
+	font-size:12px; 
+	color:#000000; 
+}
+.mainExample:link {
+	vertical-align: bottom;
+	color: #3B566E;
+}
+a:link {
+	vertical-align: bottom;
+}
+a:visited {
+	vertical-align: bottom;
+}
+a:hover {
+	background-color: silver;
+}

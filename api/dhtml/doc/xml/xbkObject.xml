@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkObject" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+This class is an abstract class that is inherited by all xbkAPI classes.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkObject" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="type" typename="String" comment="The object that instantiated this class." />
+<param name="ref" typename="Reference" comment="A reference to that object that has instantiated this abstract class." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="getxbkObjectId" comment="" >
+<method_desc>
+<![CDATA[
+Get current xbkObject id.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="String" comment="" ></return>
+</method>
+<method name="getxbkObjectById" comment="" >
+<method_desc>
+<![CDATA[
+Get xbkObject by id.
+]]>
+</method_desc>
+<params>
+<param name="id" typename="String" comment="The id xbkObject to find." />
+</params>
+<return typename="xbkObject" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="null" />
+</class>

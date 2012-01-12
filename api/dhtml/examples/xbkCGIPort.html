@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+<title>CGI Port example</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src="../src/util/xbkStack/xbkStack.js"></script>
+	<script src="../src/util/xbkCGIPort/xbkCGIPort.js"></script>
+	<style>
+			
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	
+	<script>
+		var cgi_port    = null;
+
+		function init() {
+			cgi_port = new xbkCGIPort( parent.cgi_target );	
+					
+		}
+		
+		function testQuery() {
+		
+			var obj = new cgi_port.command();
+
+				
+				obj.query = "../src/util/xbkCGIPort/get_date.php?" +					
+				//obj.qsAppend( "myID1", "myParemeter1" ) + 
+				//obj.qsAppend( "myID2", "myParemeter2" ) +
+				qsRand();
+		
+				obj.returnFunc = function ( params, error ) {
+					var my_date_time = params.date + "  " + params.time;
+					if ( ns6 ) {	
+						var OutSpan = document.getElementById("myspan");
+						var temp = document.createElement("DIV");
+						OutSpan.appendChild( temp );
+						temp.innerHTML =  my_date_time;
+					}
+					else {					 
+						myspan.insertAdjacentHTML( "BeforeEnd", '<span class="tabStyle">' + my_date_time + '</span>' );
+					}				
+				}
+			cgi_port.add( obj );
+		}
+				
+		function moo() {
+				testQuery();
+		}
+	</script>
+</head>
+
+<body onload="init()">
+<h1>Example --> xbkCGIPort </h1>
+<a href="javascript:moo()">Call CGI script</a><br>
+<div style="position: absolute; left: 50; top: 125; background-Color: silver; color:blue;">TARGET:</div>
+<div id="myspan" name="myspan" style="position: absolute; left: 50; top: 150; height: 150; width: 300; background-Color: silver;"></div>
+<IFRAME name="cgi_target" SRC="blank.html" style="position: absolute; left: 0; top: 60%; height: 0; width: 0;" scrolling="yes"></IFRAME>
+</body>
+</html>

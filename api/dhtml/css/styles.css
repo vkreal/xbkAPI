@@ -1,0 +1,426 @@
+body {
+	font-family: Verdana;
+	font-size: x-small;
+	font-weight: normal;
+	line-height: 135%;
+	margin: 5;
+	background-color: white;
+	color: black;
+}
+
+table {
+	font-family: Verdana;
+	font-size: x-small;
+	line-height: 135%;
+	
+}
+
+h1 {
+	font-family: Verdana;
+	font-size: medium;
+	font-weight: bold;
+	color: black;
+}
+h2 {
+	font-family: Verdana;
+	font-size: medium;
+	font-weight: normal;
+	color: #3B566E;
+	line-height: 100%;
+	margin-top: 40px;
+}
+h3 {
+	font-family: Verdana;
+	font-size: small;
+	font-weight: bold;
+	color: #3B566E;
+	padding-bottom: 0px;
+}
+h4 {
+	font-family: Tahoma;
+	font-weight: bold;
+	font-size: small;
+	
+}
+h5 {
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: bold;
+	line-height: 100%;
+	margin-bottom: 2px;
+	
+}
+/* h6 is for code */
+h6 {
+	font-family: courier, Courier New;
+	font-weight: normal;
+	font-size: x-small;
+	margin-left: 25px;
+	line-height: 150%;
+}
+// marked for absolute size
+.small {
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: normal;
+}
+.navTable{
+	padding: 5;
+}
+.leftCont{
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: normal;
+	margin: 0;
+}
+/* DOC NAV */
+.titleBar{
+	font-family: Tahoma;
+	font-size: small;
+	font-weight: bold;
+	color: black;
+}
+
+// marked for absolute size
+.treeText {
+	font-family: verdana;
+	font-size: 10px;
+	vertical-align: bottom;
+	text-decoration: none;
+}
+
+
+.nav:link {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: black;
+	font-weight: bold;
+	font-size: x-small;
+}
+.nav:visited {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: black;
+	font-weight: bold;
+	font-size: x-small;
+}
+.nav:hover {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: #0078FF;
+	font-weight: bold;
+	font-size: x-small;
+}
+
+
+.nav2:link {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: black;
+	font-size: x-small;
+}
+.nav2:visited {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: black;
+	font-size: x-small;
+}
+.nav2:hover {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: #0078FF;
+	font-size: x-small;
+}
+
+
+
+a:link {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: #2F2E2E;
+	
+}
+a:visited {
+	font-family: Tahoma;
+	vertical-align: bottom;
+	color: #2F2E2E;
+	
+}
+a:hover {
+	font-family: Tahoma;
+	vertical-align: bottom;
+}
+
+
+
+/*-------------------------*/
+/* Tutorial and FAQ styles */
+/*-------------------------*/
+.pageHeader_tutorial {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: small;
+	
+}
+
+.a {
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: bold;
+}
+
+code {
+	font-family: Courier New;
+	color: black;
+	font-size: x-small;
+}
+/*---------------------*/
+
+.menu {
+	font-family: Verdana;
+	font-size: x-small;
+	background-color: #3B566E;
+	margin: 0px;
+}
+
+.trim {
+	background-color: #cccccc;
+	margin: 0px;
+}
+
+
+.fLink:link {
+	font-family: Tahoma;
+	font-size: x-small;
+	vertical-align: bottom;
+	color: #0078FF;
+}
+.fLink:visited {
+	font-family: Tahoma;
+	font-size: x-small;
+	vertical-align: bottom;
+	color: #0078FF;
+}
+.fLink:hover {
+	font-family: Tahoma;
+	font-size: x-small;
+	vertical-align: bottom;
+	color: #0078FF;
+	font-weight: bold;
+}
+
+.headerLink:link {
+	font-family: Tahoma;
+	font-size: small;
+	font-weight: bold;
+	vertical-align: bottom;
+	color: #3B566E;
+}
+.headerLink:visited {
+	font-family: Tahoma;
+	font-size: small;
+	font-weight: bold;
+	vertical-align: bottom;
+	color: #3B566E;
+}
+.headerLink:hover {
+	font-family: Tahoma;
+	font-size: small;
+	font-weight: bold;
+	vertical-align: bottom;
+	color: #3B566E;
+	background-color: silver;
+}
+
+.mainNav:link {
+	font-family: Tahoma;
+	font-size: small;
+	vertical-align: bottom;
+	color: #3B566E;
+}
+.mainNav:visited {
+	font-family: Tahoma;
+	font-size: small;
+	vertical-align: bottom;
+	color: #3B566E;
+}
+.mainNav:hover {
+	font-family: Tahoma;
+	font-size: small;
+	vertical-align: bottom;
+	color: #3B566E;
+	background-color: silver;
+}
+
+.footer {
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: normal;
+}
+
+/*----------------*/
+/* TechRef styles */
+/*----------------*/
+.methodName {
+	font-family: Tahoma;
+	font-size: small;
+	font-weight: bold;
+}
+
+.methodParams {
+	font-weight: bold;
+	font-size: x-small;
+	color: black;
+	line-height: 250%;
+}
+
+.paramFieldName {
+	font-weight: bold;
+	font-family: Courier New;
+	color: #2F2E2E;
+	font-size: small;
+}
+
+.paramType {
+	font-style: italic;
+	color: black;
+	font-size: x-small;
+}
+
+.paramComment {
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: normal;
+}
+
+.classText{
+	font-weight: normal;
+	font-size: x-small;
+	color: black;
+	line-height: 140%;
+}
+
+.sectionHR {
+	color: black;
+	margin-top: 12;
+}
+
+.methodHR {
+	width: 35%;
+	text-align: left;
+	color: silver;
+	margin-bottom: 12px;
+}
+/*-------------*/
+
+
+/*----------------*/
+/* CodeRef styles */
+/*----------------*/
+.codeText {
+	font-family: Courier New;
+	color: black;
+	padding: 5px;
+	padding-left: 25px;
+}
+
+.codeCommentText {
+	font-family: Verdana;
+	font-size: x-small;
+	line-height: 125%;
+	color: black;
+	background-color: Cornsilk;
+	padding: 4px;
+	padding-bottom: 6px;
+	margin-bottom: 12px;
+	margin-left: 20px;
+}
+
+.commentedOut {
+	color: #959595;
+}
+
+.infoText{
+	font-family: Verdana;
+	font-size: x-small;
+}
+
+.tlink {
+	text-decoration: none;
+	color: red;
+}
+.commentTitle{
+	font-family: Verdana;
+	font-size: small;
+	color: white;
+}
+
+/* delete these 
+.ilink {
+	text-decoration: none;
+	font-weight: bold;
+	color: navy;
+}
+
+.commentName {
+	text-decoration: underline;
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: normal;
+}
+
+.commentText {
+	font-family: Tahoma;
+	font-size: x-small;
+	font-weight: normal;
+}
+
+.topicToc{
+	color: black;
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: medium;
+	padding: 5px;
+}
+
+.topicTitle {
+	font-family: Verdana;
+	font-weight: bold;
+	font-size: small;
+	color: navy;
+	margin-top: 20px;
+}
+
+.commentTitle{
+	font-family: Verdana;
+	font-size: small;
+}
+/*--------------*/
+
+
+/*
+.q {
+	font-family: Verdana;
+	font-size: medium;
+	font-weight: bold;
+	color: red;
+}
+.question {
+	font-family: Verdana;
+	font-size: small;
+	font-weight: bold;
+}
+.answer {
+	font-family: Verdana;
+	font-size: small;
+	font-weight: normal;
+	line-height: 135%
+}
+h6 {
+	font-family: courier, Courier New;
+	font-weight: normal;
+	font-size: x-small;
+	margin-left: 25px;
+	line-height: 150%;
+}
+*/

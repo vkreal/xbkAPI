@@ -1,0 +1,71 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkTab documentation</title>
+<BODY>
+<h1>xbkTab</h1></font>
+<p>The xbkTab class provides Tab Seletion options for xbkAPI web applications.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.0
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkTab' >
+<hr class='methodHR'>
+<font class='methodName'>xbkTab(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkTab.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The parent of the xbkTab object if it has one.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='addItem' >
+<hr class='methodHR'>
+<font class='methodName'>addItem(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Adds an item to the Tab.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text that appears for the item.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Referece to a handler function.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>xbkLayer</font>
+<font class='paramComment'>The body as a xbkLayer</font>
+</a>
+<a name='remove' >
+<hr class='methodHR'>
+<font class='methodName'>remove(</font><font class='paramType'>Number</font> <font class='paramFieldName'>index</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Remove an item from the Tab.</font>
+<li><font class='paramType'>Number</font>
+<font class='paramFieldName'>index</font> 
+<br><font class='paramComment'>Index of tab.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setTabBgColor' >
+<hr class='methodHR'>
+<font class='methodName'>setTabBgColor(</font><font class='paramType'>String</font> <font class='paramFieldName'>sTabOn</font>, <font class='paramType'>String</font> <font class='paramFieldName'>sTabOff</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the background color of the tab when click on and off.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>sTabOn</font> 
+<br><font class='paramComment'>Color when this tab has focus</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>sTabOff</font> 
+<br><font class='paramComment'>Color when this tab is off focus</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='redraw' >
+<hr class='methodHR'>
+<font class='methodName'>redraw(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Redraw xbkTab.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkTab.html'class='elink'>xbkTab</a>
+</BODY>

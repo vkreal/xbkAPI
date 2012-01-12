@@ -1,0 +1,108 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkTree" version="1.2" since="1.0">
+<desc>
+<![CDATA[
+The xbkTree class display information in a hierarchal tree system.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkTree" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkMenu." />
+<param name="parent" typename="xbkLayer" comment="The parent of the xbkMenu object if it has one." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="getSelectedNode" comment="" >
+<method_desc>
+<![CDATA[
+Get the current selected xbkTreeNode.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="xbkTreeNode" comment="" ></return>
+</method>
+<method name="setImagePath" comment="" >
+<method_desc>
+<![CDATA[
+Set the path for the image location folder.
+]]>
+</method_desc>
+<params>
+<param name="path" typename="String" comment="location of images folder." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="getChildNode" comment="" >
+<method_desc>
+<![CDATA[
+Creates a child xbkTreeNode and return it.
+]]>
+</method_desc>
+<params>
+<param name="text" typename="String" comment="Text that appears for the item." />
+<param name="fHandler" typename="Reference" comment="Reference to a handler function for this xbkTreeNode." />
+<param name="img" typename="String" comment="Image to use." />
+</params>
+<return typename="xbkTreeNode" comment="Reference to a xbkTreeNode note: see xbkTreeNode class" ></return>
+</method>
+<method name="getParentNode" comment="" >
+<method_desc>
+<![CDATA[
+Creates a parent xbkTreeNode and return it.
+]]>
+</method_desc>
+<params>
+<param name="text" typename="String" comment="Text that appears for the item." />
+<param name="fHandler" typename="Reference" comment="Reference to a handler function for this xbkTreeNode." />
+<param name="closeImg" typename="String" comment="Image to use for folder close." />
+<param name="openImg" typename="String" comment="Image to use for folder open." />
+</params>
+<return typename="xbkTreeNode" comment="Reference to a xbkTreeNode note: see xbkTreeNode class" ></return>
+</method>
+<method name="addRoot" comment="" >
+<method_desc>
+<![CDATA[
+Add a root xbkTreeNode to the current xbkTree.
+]]>
+</method_desc>
+<params>
+<param name="node" typename="xbkTreeNode" comment="A xbkTreeNode to be added to the root level." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="removeNode" comment="" >
+<method_desc>
+<![CDATA[
+Remove a node by id from the current xbkTree.
+]]>
+</method_desc>
+<params>
+<param name="id" typename="String" comment="" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="draw" comment="" >
+<method_desc>
+<![CDATA[
+Draw the xbkTree.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="None" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="xbkLayer" />
+</class>

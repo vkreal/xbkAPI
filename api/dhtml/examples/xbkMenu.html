@@ -1,0 +1,71 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkMenu</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/util/xbkNode/xbkNode.js'></script>
+	<script src='../src/ui/xbkMenu/xbkMenu.js'></script>
+	<LINK REL='stylesheet' HREF='../src/css/xbkMenu.css' TYPE='text/css'>
+
+	<style>
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	<!-- source script... this block MUST be separate from the block above -->
+	<script>
+		var myMenu = null;
+		var myMenu2 = null;
+		function init() {
+
+			myMenu = new xbkMenu("myMenu", null);
+			with ( myMenu ) {
+				setLeft( 100 );
+				setTop( 100 );
+				setWidth( 300 );
+				setHeight( 18 );
+				setVis("show");
+				setMouseOverHightLight ( true );
+				setBgColor("#D6D3CE");
+				//setBorderLeft( 1,"#D6D3CE");
+				//setBorderTop( 1,"#D6D3CE");
+				//setBorderRight( 1,"black");
+				//setBorderBottom( 1,"black");
+				//setHorizontalMenu( false );
+				addItem( "File" , NEW_HANDLER );
+				addItem( "Edit" , OPEN_HANDLER );
+				//addBar();
+				addItem( "View" , PRINT_HANDLER );
+				addItem( "Help" , CLOSE_HANDLER  );
+				
+			}
+		}
+		function NEW_HANDLER() {
+			//alert("click File");
+		}
+		function OPEN_HANDLER() {
+			alert("click Edit");
+		}
+		function PRINT_HANDLER() {
+			alert("click View");
+		}
+		function CLOSE_HANDLER() {
+			alert("click Help");
+		}
+
+	</script>
+</head>
+
+
+<body bgcolor="white" onload="init();">
+	<h1> Example --> xbkMenu</h1>
+	<a href="javascript:myMenu.setVis('hidden')">hide</a><br>
+	<a href="javascript:myMenu.setVis('show')">show</a><br>
+</body>
+
+
+</html>

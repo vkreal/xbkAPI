@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkProgressBar</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/ui/xbkProgressBar/xbkProgressBar.js'></script>
+
+	<style>
+		.startStyleClass {
+			font-family: MS sans serif;
+			font-size: 10px;
+			margin-left: 3;
+			color: black;
+			cursor: default;
+			padding-top: 3px;
+		}
+		.endStyleClass {
+			font-family: MS sans serif;
+			font-size: 10px;
+			margin-left: 3;
+			padding-top: 3px;	
+			color: white;
+			cursor: default;
+		}
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	<!-- source script... this block MUST be separate from the block above -->
+	<script>
+		var xbkBar = null;
+		function init() {
+			xbkBar = new xbkProgressBar("xbkBar");
+			with ( xbkBar ) {
+				setStyleClass("startStyleClass","endStyleClass");
+				setLeft( 100 );
+				setTop( 100 );
+				setWidth( 200 );
+				setHeight( 20 );
+				setBgColor("red", "silver");
+				setBorderLeft( 1,"black");
+				setBorderTop( 1,"black");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				setVis("show");
+			}
+			startProgressBar(0);
+		}
+
+		function startProgressBar(perc) {
+			xbkBar.setPercentComplete( perc );
+		
+			if ( perc <= 100 ) {
+				perc++;
+				this.setTimeout( "startProgressBar("+perc+")" , 100 );
+			}
+		}
+
+
+	</script>
+</head>
+
+
+<body bgcolor="white" onload="init();">
+	<h1> Example --> xbkProgressBar</h1>
+</body>
+
+
+</html>

@@ -1,0 +1,96 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"&gt;
+
+&lt;html&gt;
+&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+&lt;script src='../src/util/xbkNode/xbkNode.js'&gt;&lt;/script&gt;
+&lt;script src='../src/ui/xbkIconBrowser/xbkIconBrowser.js'&gt;&lt;/script&gt;
+&lt;style&gt;
+		.xbkIconBrowserStyle {
+			width: 75;
+			height: 75;
+			font-family: MS Sans serif;
+			font-size: 8px;
+			text-align: center;
+			/*cursor: hand;*/
+			color: black;
+		}
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+&lt;/style&gt;
+	&lt;script&gt;
+		var xbkIconMenu = null;
+		function init() {
+			xbkIconMenu = new xbkIconBrowser( "xbkIconMenu" );
+			with( xbkIconMenu ) {
+				setWidth( 300 );
+				setHeight( 250 );
+				setLeft( 150 );
+				setTop( 50 );
+				setBorderTop( 1,"#D6D3CE");
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				setBgColor("silver");
+				setVis("show");
+			
+				setHighLightColor("ghostwhite");
+				addItem("icon_0", "resume.doc", "../images/xbkIconView/docL.gif", userDefinedFunction);
+				addItem("icon_1", "payroll.xls", "../images/xbkIconView/xlsL.gif", userDefinedFunction);
+				addItem("icon_2", "missy.jpg", "../images/xbkIconView/gifL.gif", userDefinedFunction);
+				addItem("icon_3", "project.doc", "../images/xbkIconView/docL.gif", userDefinedFunction);
+				addItem("icon_4", "picture.jpg", "../images/xbkIconView/gifL.gif", userDefinedFunction);
+				addItem("icon_5", "cover.doc", "../images/xbkIconView/docL.gif", userDefinedFunction);
+				sort();
+				selectIconById("icon_0");
+				
+			}
+		}
+		var xbkIconMenu_COUNT = 10;
+		function addIcon() {
+			xbkIconMenu.addItem("icon_"+xbkIconMenu_COUNT, ++xbkIconMenu_COUNT+"_b.doc", '../images/xbkIconView/docL.gif',userDefinedFunction );
+			xbkIconMenu.sort();
+		}
+		
+		function removeIcon() {
+			if (xbkIconMenu.selected) {
+				xbkIconMenu.removeItem( xbkIconMenu.selected.id );
+			}
+		}
+		
+		function userDefinedFunction() {
+			// do something useful here
+		}
+	
+		function hide() {
+			xbkIconMenu.setVis("hidden");
+
+		}
+		function show(){
+			xbkIconMenu.setVis("show");
+		}
+	&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body bgcolor="white" onload="init();"&gt;
+	&lt;h1&gt;Example --&gt; xbkIconBrowser &lt;/h1&gt;
+		&lt;a href="javascript:xbkIconMenu.setWidth(xbkIconMenu.getWidth()+5);"&gt;resize width ++&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:xbkIconMenu.setWidth(xbkIconMenu.getWidth()-5);"&gt;resize width --&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:xbkIconMenu.setHeight(xbkIconMenu.getHeight()+5);"&gt;resize height ++&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:xbkIconMenu.setHeight(xbkIconMenu.getHeight()-5);"&gt;resize height --&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:addIcon();"&gt;addItem&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:removeIcon();"&gt;remove selected&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:hide();"&gt;hide&lt;/a&gt;&lt;br&gt;
+		&lt;a href="javascript:show();"&gt;show&lt;/a&gt;&lt;br&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>

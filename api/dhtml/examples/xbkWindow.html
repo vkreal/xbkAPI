@@ -1,0 +1,121 @@
+<HTML>
+<script src='../src/util/xbkObject/xbkObject.js'></script>
+<script src='../src/util/xbkDragEvent/xbkDragEvent.js'></script>
+<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+<script src='../src/ui/xbkWindow/xbkWindow.js'></script>
+
+<!-- EXAMPLE CODE -->
+
+<script src='../doc/html/doc/xbkGeneratedClassAtrribute.js'></script>
+<script src='../main.js'></script>
+
+<!-- END -------->
+
+<style>
+	.xbkWindowTitle {
+		font-family: Verdana;
+		font-size: 11px;
+		font-weight: bold;
+		color: ghostwhite;
+	}
+	
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+</style>
+<script>
+	var xbkWin = null;
+	var myIconView = null;
+	var HTMLString = "<div><code>HTML</code> data as a <i>string</i></div>";
+	
+	function init() {
+		xbkWin = new xbkWindow("xbkWin");
+		with( xbkWin ) {
+			setLeft( 5 );
+			setTop( 150 );
+			setWidth( 200 );
+			setHeight( 150 );
+			setBgColor("silver");
+			setBorderLeft( 1,"gray");
+			setBorderTop( 1,"gray");
+			setBorderBottom( 1,"black");
+			setBorderRight( 1,"black");
+			setVis( "show" );
+			
+			setWindowTitle("xbkWindow 1", "xbkWindowTitle");
+
+			setCloseWindowHandler(MY_WIN_CLOSE_HANDLER);
+			setMinWindowHandler(MY_WIN_MIN_HANDLER);
+			setMaxWindowHandler(MY_WIN_MAX_HANDLER);
+			setIconWinHandler(MY_WIN_ICON_HANDLER);
+		}
+		
+		xbkWin2 = new xbkWindow("xbkWin2");
+		with( xbkWin2 ) {
+			setLeft( 250 );
+			setTop( 100 );
+			setWidth( 200 );
+			setHeight( 150 );
+			setBgColor("silver");
+			setBorderLeft( 1,"gray");
+			setBorderTop( 1,"gray");
+			setBorderBottom( 1,"black");
+			setBorderRight( 1,"black");
+			setVis( "show" );
+			setWindowTitle("xbkWindow 2", "xbkWindowTitle");
+			setInnerHTML( HTMLString );
+			setCloseWindowHandler(MY_WIN_CLOSE_HANDLER);
+			setMinWindowHandler(MY_WIN_MIN_HANDLER);
+			setMaxWindowHandler(MY_WIN_MAX_HANDLER);
+			setIconWinHandler(MY_WIN_ICON_HANDLER);
+		}	
+		
+		
+			
+		
+		layer = new xbkLayer(xbkWin2.mainBody);
+		with( layer ) {
+			setLeft( 20 );
+			setTop( 70 );
+			setWidth( 70 );
+			setHeight( 50 );
+			setBgColor("red");
+			setBorderLeft( 1,"gray");
+			setBorderTop( 1,"gray");
+			setBorderBottom( 1,"black");
+			setBorderRight( 1,"black");
+			setVis( "show" );
+			setInnerHTML( "<div><i>drag me!!</i></div>" );
+		}		
+		
+		drag = new xbkDragEvent();
+		drag.enableDragEvent( layer );
+		//drag.setBoundedToParent( true );
+		
+		
+			
+	}
+	
+	function MY_WIN_CLOSE_HANDLER() {
+		alert( "window Close HANDLER click...." );
+	}
+	function MY_WIN_MAX_HANDLER() {
+		//alert( "window Maximize HANDLER click...." );
+	}
+	function MY_WIN_MIN_HANDLER() {
+		//alert( "window Minimize HANDLER click...." );
+	}
+	function MY_WIN_ICON_HANDLER() {
+		alert( "window Icon HANDLER click...." );
+	}
+	
+</script>
+<body onload="init();">
+<h1>Example  --> xbkWindow</h1>
+	<a href='javascript:xbkWin.setInnerHTML( xbkEXAMPLE_HTML );'>Load Page</a><br>
+	<a href='javascript:xbkWin.setInnerHTML( "" );'>Unload Page</a>
+</body>
+</HTML>

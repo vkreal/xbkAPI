@@ -1,0 +1,397 @@
+<HTML>
+	<!--
+ Copyright (c) 2002 xbkapi (xbkapi@yahoo.com)
+ This library is distributed under the terms of the GNU Lesser General Public License (gnu.org).
+-->
+	<title>xbkAPI EMAIL DEMO</title>
+	<script src='../../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../../src/util/xbkNode/xbkNode.js'></script>
+	<script src='../../src/ui/xbkMenu/xbkMenu.js'></script>
+	<script src='../../src/util/xbkTreeNode/xbkTreeNode.js'></script>
+	<script src='../../src/ui/xbkTree/xbkTree.js'></script>
+	<script src='../../src/ui/xbkList/xbkList.js'></script>
+	<script src='../../src/ui/xbkToolBar/xbkToolBar.js'></script>
+	<link rel='stylesheet' href="../../src/css/xbkList.css">
+		<LINK REL='stylesheet' HREF='../../src/css/xbkMenu.css' TYPE='text/css'>
+			<style>
+	.treeText {
+		font-family: tahoma;
+		font-size: 12px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: black;
+	}
+	
+	.msgHeaders{
+		font-family: tahoma;
+		font-size: 11px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: ghostwhite;
+		font-weight: bold;
+	}
+    </style>
+			<script>
+	var MAIN_MENU = null;
+	var itemFILE 	= null;
+	var itemEDIT 	= null;
+	var itemVIEW 	= null;
+	var itemTOOL 	= null;
+	var itemHELP	= null;
+	var SELECTED_xbkMENU = null;
+
+
+	var ICON_MENU = null;
+	var INBOX_HEADER = null;
+	var ACCT_HEADER = null;
+	var ACCT_BODY	= null;
+	var EMAIL_LIST  = null;
+	var MSG_HEADER  = null;
+	var MSG_BODY	= null;
+	function init() {
+		//////////////// MAIN_MENU //////////////////
+		
+		MAIN_MENU = new xbkToolBar( "MAIN_MENU" );
+		with ( MAIN_MENU ) {
+			setLeft( 0 );
+			setTop( 0 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 25 );
+			setVis("show");
+			setBgColor("silver");
+			//setBgColor("#D6D3CE");
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+			//setEvent("onmousedown",hideALLxbkMenu);
+			addItem( "images/file_tab.gif", "images/file_tabR.gif", "images/file_tabP.gif", FILE_ONCLICK_HANDLER);
+			addItem( "images/edit_tab.gif", "images/edit_tabR.gif", "images/edit_tabP.gif", EDIT_ONCLICK_HANDLER);
+			addItem( "images/view_tab.gif", "images/view_tabR.gif", "images/view_tabP.gif", VIEW_ONCLICK_HANDLER);
+			addItem( "images/tools_tab.gif", "images/tools_tabR.gif", "images/tools_tabP.gif", TOOL_ONCLICK_HANDLER);
+			addItem( "images/help_tab.gif", "images/help_tabR.gif", "images/help_tabP.gif", HELP_ONCLICK_HANDLER);
+		}
+
+		itemFILE = new xbkMenu("itemFILE");
+		with(itemFILE) {
+			setMouseOverHightLight( true );
+			setHorizontalMenu( false );
+			autostrechHorizontal( true );
+			autostrechVertical( true );
+			setBgColor("silver");
+			setWidth( 150 );
+			setZIndex(1001);
+			addItem("New");
+			addItem("Open");
+			addItem("Print");
+			addBar();
+			addItem("Close");
+			setVis("hidden");
+		}
+
+		function FILE_ONCLICK_HANDLER(event) {
+			ALL_ONCLICK_HANDLER(event,itemFILE);
+		}
+			
+		itemEDIT = new xbkMenu("itemEDIT");
+		with(itemEDIT) {
+			setMouseOverHightLight( true );
+			setHorizontalMenu( false );
+			autostrechHorizontal( true );
+			autostrechVertical( true );
+			setBgColor("silver");
+			setWidth( 150 );
+			setZIndex(1001);
+			addItem("Copy");
+			addItem("Select All");
+			addBar();
+			addItem("Find");
+			addBar();
+			addItem("Delete");
+			setVis("hidden");
+		}
+		function EDIT_ONCLICK_HANDLER(event) {
+			ALL_ONCLICK_HANDLER(event,itemEDIT);
+		}
+		
+		itemVIEW = new xbkMenu("itemVIEW");
+		with(itemVIEW) {
+			setMouseOverHightLight( true );
+			setHorizontalMenu( false );
+			autostrechHorizontal( true );
+			autostrechVertical( true );
+			setBgColor("silver");
+			setWidth( 150 );
+			setZIndex(1001);
+			addItem("Current Message");
+			addBar();
+			addItem("Next");
+			addItem("Previous");
+			addBar();
+			addItem("Refresh");
+			setVis("hidden");
+		}
+		function VIEW_ONCLICK_HANDLER(event) {
+			ALL_ONCLICK_HANDLER(event,itemVIEW);
+		}
+		
+		itemTOOL = new xbkMenu("itemTOOL");
+		with(itemTOOL) {
+			setMouseOverHightLight( true );
+			setHorizontalMenu( false );
+			autostrechHorizontal( true );
+			autostrechVertical( true );
+			setBgColor("silver");
+			setWidth( 200 );
+			setZIndex(1001);
+			addItem("Send & Recieve");
+			addBar();
+			addItem("Address Book");
+			addItem("Add Current");
+			addBar();
+			addItem("Accounts");
+			addItem("Options");
+			setVis("hidden");
+		}
+		function TOOL_ONCLICK_HANDLER(event) {
+			ALL_ONCLICK_HANDLER(event,itemTOOL);
+		}
+			
+		itemHELP = new xbkMenu("itemHELP");
+		with(itemHELP) {
+			setMouseOverHightLight( true );
+			setHorizontalMenu( false );
+			autostrechHorizontal( true );
+			autostrechVertical( true );
+			setBgColor("silver");
+			setWidth( 150 );
+			setZIndex(1001);
+			addItem("About");
+			setVis("hidden");
+		}
+		function HELP_ONCLICK_HANDLER(event) {
+			ALL_ONCLICK_HANDLER(event,itemHELP);
+		}
+
+		////////////// END MAIN_MENU /////////////////
+
+		TOOL_BAR = new xbkToolBar("TOOL_BAR");
+
+		with(TOOL_BAR) {
+			setLeft( 0 );
+			setTop( (ns6)?27:25 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 40 );
+			setVis("show");
+			setBgColor("silver");
+			//setBgColor("#D6D3CE");
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+			setEvent("onmousedown",hideALLxbkMenu );
+			addItem("images/new_button.gif", "images/new_buttonR.gif", "images/new_buttonP.gif");
+			addItem("images/reply_button.gif", "images/reply_buttonR.gif", "images/reply_buttonP.gif");
+			addItem("images/reply_all_button.gif", "images/reply_all_buttonR.gif", "images/reply_all_buttonP.gif");
+			addItem("images/delete_button.gif", "images/delete_buttonR.gif", "images/delete_buttonP.gif");
+			addItem("images/print_button.gif", "images/print_buttonR.gif", "images/print_buttonP.gif");
+		}
+		////////////// END TOOL_BAR /////////////////
+		INBOX_HEADER = new xbkLayer();
+		with(INBOX_HEADER) {
+			setLeft( 0 );
+			setTop( (ns6)?68:66 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 25 );
+			setVis("show");
+			setBgColor("gray");
+			//setBgColor("#D6D3CE");
+			setBorderBottom( 2, "silver");
+			setBorderTop( 2, "silver");
+			setBorderLeft( 2, "silver");
+			setBorderRight( 2, "silver");
+			setEvent("onmousedown",hideALLxbkMenu);
+			setInnerHTML('<font size="+1" color="ghostwhite"><b>&nbsp;Inbox</b></font>');
+	
+		}
+		////////////////// END INBOX_HEADER ////////////////////
+
+		ACCT_HEADER = new xbkLayer();
+		with(ACCT_HEADER) {
+			setWidth( 200 );
+			setHeight( 20 );
+			setLeft( 0 );
+			setTop( (ns6)?93:90 );
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+			setBgColor("silver");
+			setEvent("onmousedown",hideALLxbkMenu);
+			setVis("show");
+			setInnerHTML('<font><b>&nbsp;Accounts</b></font>');
+		}
+		////////////////////// END FOLDER_HEADER //////////////////////
+		ACCT_BODY = new xbkTree( "ACCT_BODY", null );
+		with( ACCT_BODY ) {
+			setLeft( 0 );
+			setTop( (ns6)?115:112 );
+			setWidth( 200 );
+			setHeight( (ns6)?xbkUtil.APP_HEIGHT() - 130:xbkUtil.APP_HEIGHT() -112 ); // 120
+			//setBgColor("red");
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			//setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+			setEvent("onmousedown",hideALLxbkMenu);
+			setVis( "show" );
+			setImagePath("../../images/xbkTree/");
+			root_0 = getParentNode("Main Account");
+			root_1 = getParentNode("Pop3 Account");		
+			
+			item_0 = getChildNode("Inbox",null,"images/sub/mailbox.gif");
+			item_1 = getChildNode("Drafts");
+			item_2 = getChildNode("Outbox",null,"images/sub/mailbox.gif");
+			item_3 = getChildNode("Deleted", null,"images/sub/e_deleteFolder.gif");
+			item_4 = getChildNode("Saved",null,"images/sub/e_createFolder.gif");
+			item_5 = getChildNode("Sent");
+			with(root_0) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(item_2);
+				addChildNode(item_3);
+				addChildNode(item_4);
+				addChildNode(item_5);	
+			}
+			with(root_1) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(item_2);
+				addChildNode(item_3);
+				addChildNode(item_4);
+				addChildNode(item_5);
+			
+			}
+			addRoot(root_0);
+			addRoot(root_1);
+		}
+	
+		////////////////////////// END ACCT_BODY ///////////////////
+		var my_space = "&nbsp;&nbsp;";
+
+		var aHeading = new Array(my_space+"From",my_space+"Subject",my_space+"Received");
+		EMAIL_LIST = new xbkList( "EMAIL_LIST", null );
+		with( EMAIL_LIST ) {
+			setLeft( 200 );
+			setTop( (ns6)?93:90 );
+			setWidth( xbkUtil.APP_WIDTH() - 200 );
+			setHeight( 150 );
+			setVis( "show" );
+			setBorderTop( 1, "white");
+			setBorderLeft( 1, "white");
+			setBorderBottom( 1, "gray");
+			setBorderRight( 1, "gray");
+			addHeading( aHeading );	
+			setEvent("onmousedown",hideALLxbkMenu);
+			/*
+			addRow( "a1", ["row1", "row1", "row1"] );
+			addRow( "a2", ["row2", "row2", "row2"] );
+			addRow( "a3", ["row3", "row3", "row3"] );
+			addRow( "a4", ["row4", "row4", "row4"] );
+			*/
+			
+			
+		} 
+		////////////////// END EMAIL_LIST ////////////////////
+		MSG_HEADER = new xbkLayer();
+		with(MSG_HEADER) {
+			setWidth( xbkUtil.APP_WIDTH() - 200 );
+			setHeight( 40 );
+			setLeft( (ns6)?201:200 );
+			setTop( (ns6)?245:240 );
+			setBgColor("silver");
+			setBorderTop( 5, "gray");
+			setEvent("onmousedown",hideALLxbkMenu);
+			setVis("show");
+		}
+		writeMessage("","","","");
+
+		////////////////////// END MSG_HEADER ///////////////////
+		MSG_BODY = new xbkLayer();
+		with(MSG_BODY) {
+			setWidth( xbkUtil.APP_WIDTH() - 200 );
+			setHeight( (ns6)?xbkUtil.APP_HEIGHT() - 305:xbkUtil.APP_HEIGHT() - 280 );
+			setLeft( (ns6)?201:200 );
+			setTop( (ns6)?290:280 );
+			//setBgColor("yellow");
+			setBorderTop( 1, "gray");
+			setEvent("onmousedown",hideALLxbkMenu);
+			setVis("show");
+		}
+
+	}
+	function writeMessage( to, from, subject, msg ) {
+		MSG_HEADER.setInnerHTML('<table width="300" style="position:absolute: top: 0; left: 0;" cellpadding="2" cellspacing="0">' + 
+					'<tr>' +
+					'<td class="msgHeaders">To: <font class="msgData">'+ to +'</font></td><td class="msgHeaders">From: <font class="msgData">'+ from +'</font></td>'+
+					'</tr>' +
+					'<tr>' +
+					'<td colspan="2" class="msgHeaders">Subject: <font class="msgData">'+ subject+'</font></td>'+
+					'</tr>' +
+				'</table>');
+			
+		//MSGVIEW._setInnerHTML('<table width="'+MSGVIEW.width()+'" height="50" cellpadding="3" cellspacing="0"><tr><td>'+ msg +'</td></tr></table>');
+	}
+
+	function getClickLocation(event) {
+		var x = null;
+		var y = null;
+		if ( ns6 ) {
+			x = event.pageX;
+			y = event.pageY;
+		}
+		else if ( document.all ) {
+			x = window.event.clientX + document.body.scrollLeft;
+			y = window.event.clientY + document.body.scrollTop;
+		}
+		return [x,y];
+	}
+	
+	///////////////// OVERLOADING xbkMenu PRIVATE METHOD //////////////
+	
+	function xbkMenu_ONCLICK( event, obj, id, sName, inst ) {
+		var menuObj = xbkMenu.all[ inst ];
+		if (menuObj) {
+			menuObj.xbkMenu_setBorder_MOUSECLICK( obj );
+			var item=menuObj.findNodeById(id);
+			(item && item.fHandler)?item.fHandler():null;
+			menuObj.setVis("hidden");
+		}
+	}
+	
+	function ALL_ONCLICK_HANDLER(event, typeOBJ ) {
+			if (SELECTED_xbkMENU) {
+				SELECTED_xbkMENU.setVis("hidden");
+			}
+			SELECTED_xbkMENU = typeOBJ;
+			var target = getClickLocation(event);
+			typeOBJ.setLeft(target[0]);
+			typeOBJ.setTop(target[1]);
+			typeOBJ.setVis("show");
+			//alert(2)
+	}
+
+	function hideALLxbkMenu() {
+		for (var i in xbkMenu.all) {
+			xbkMenu.all[i].setVis("hidden");
+		}
+	}
+
+	function resize() {
+		//history.go(0);
+	}
+			</script>
+			<BODY onload="init();" onresize="resize()">
+			</BODY>
+</HTML>

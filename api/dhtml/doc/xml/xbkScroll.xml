@@ -1,0 +1,49 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkScroll" version="2.1" since="1.0">
+<desc>
+<![CDATA[
+The xbkScroll Class creates xbkLayer that scroll with the browser.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkScroll" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkScroll." />
+<param name="xbkLayerObj" typename="xbkLayer" comment="The xbkLayer to scroll." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="setScrollDelay" comment="" >
+<method_desc>
+<![CDATA[
+Set the scroll delay.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Scroll delay in milliseconds." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="scroll" comment="" >
+<method_desc>
+<![CDATA[
+Start the scroll.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="None" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="xbkObject" />
+</class>

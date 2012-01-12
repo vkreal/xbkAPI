@@ -1,0 +1,49 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;HTML&gt;
+&lt;style&gt;
+	pre {
+		background-Color:silver;
+		color:white;
+	}
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+&lt;/style&gt;
+&lt;body&gt;
+	&lt;h1&gt;
+		Simple Example Code  --&gt; xbkStack
+	&lt;/h1&gt;	
+	&lt;pre&gt;
+		var id = 0;
+
+		function node(id,text) {
+			this.id   = id||null;
+			this.text = text||null;
+		}
+
+		// Create a new stack
+		var stack = new xbkStack();
+
+		// push node object into stack
+		with(stack){
+			push(new node("id_"+id, "node"+id++));
+			push(new node("id_"+id, "node"+id++));
+			push(new node("id_"+id, "node"+id++));
+			push(new node("id_"+id, "node"+id++));
+		}
+		
+		// remove from stack
+		var stackNode = stack.pop();
+		
+	&lt;/pre&gt;
+&lt;/body&gt;
+
+&lt;/HTML&gt;
+
+</pre>

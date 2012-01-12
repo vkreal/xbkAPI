@@ -1,0 +1,56 @@
+<html>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/ui/xbkLabel/xbkLabel.js'></script>
+	
+	<style>
+		.textStyle {
+			font-family: tahoma, arial;
+			text-decoration: none;
+			color: blue;
+			font-weight: bold;
+		}
+		
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	<script>
+		var label = null;
+		function init() {
+			label = new xbkLabel();
+			with( label ) {
+				setLeft( 150 );
+				setTop( 100 );
+				setWidth( 100 );
+				setHeight( 20 );
+				setBgColor("silver");
+				setBorderLeft( 1,"gray");
+				setBorderTop( 1,"gray");
+				setBorderBottom( 1,"black");
+				setBorderRight( 1,"black");
+				setText("LABEL");
+				setStyle("textStyle");
+				setVis( "show" );
+			}
+		}
+		
+		function myclick() {
+			//alert("click..");
+		}
+	</script>
+	<body onload="init()">
+	<h1>
+		Example  --> xbkLabel
+	</h1>
+	<a href="javascript:label.setWidth(label.getWidth()+5);">resize width ++</a><br>
+	<a href="javascript:label.setWidth(label.getWidth()-5);">resize width --</a><br>
+	<a href="javascript:label.setHeight(label.getHeight()+5);">resize height ++</a><br>
+	<a href="javascript:label.setHeight(label.getHeight()-5);">resize height --</a><br>
+	<a href="javascript:label.setVis('show');">show</a><br>
+	<a href="javascript:label.setVis('hidden');">hide</a><br>	
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;xbkAPI example: xbkMenu&lt;/title&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/util/xbkNode/xbkNode.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkTab/xbkTab.js'&gt;&lt;/script&gt;
+	
+	&lt;style&gt;	
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	&lt;script&gt;
+		var myTabView = null;
+		
+		function init() {
+			myTabView = new xbkTab("myTabView", null );
+			with(myTabView) {
+				setWidth( 300 );
+				setHeight( 200 );
+				setLeft( 100 );
+				setTop( 100 );
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderRight( 1,"#D6D3CE");
+				setBorderTop( 1,"#D6D3CE");
+				setBorderBottom( 1,"gray");
+				//setBgColor("silver");
+				var node_0 = addItem("Tab 1", TEST_HANDLER, null );
+				node_0.setInnerHTML("&lt;b&gt;&lt;i&gt;Tab 1 html string&lt;/i&gt;&lt;/b&gt;");
+				var node_1 = addItem("Tab 2", null);
+				node_1.setInnerHTML("&lt;b&gt;&lt;i&gt;Tab 2 html string&lt;/i&gt;&lt;/b&gt;");
+				var node_2 = addItem("Tab 3", null);
+				node_2.setInnerHTML("&lt;b&gt;&lt;i&gt;Tab 3 html string&lt;/i&gt;&lt;/b&gt;");
+				setVis("show");
+			}
+		}
+
+		function TEST_HANDLER() {
+			alert("click....");
+		}
+
+	&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body onload='init();'&gt;
+&lt;h1&gt;
+		Example	 --&gt; xbkTab
+&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</pre>

@@ -1,0 +1,60 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkTreeNode documentation</title>
+<BODY>
+<h1>xbkTreeNode</h1></font>
+<p>The xbkTreeNode data structure holds information about an item of a xbkTree.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.2
+<br><b>Extends:</b>&nbsp;<a href='xbkObject.html'>xbkObject</a>
+<h2>Constructor</h2>
+<a name='xbkTreeNode' >
+<hr class='methodHR'>
+<font class='methodName'>xbkTreeNode(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bFolder</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font>, <font class='paramType'>xbkTree</font> <font class='paramFieldName'>xbkTreeRef</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bFolder</font> 
+<br><font class='paramComment'>If this xbkTreeNode is a folder or file.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>A reference to a handler function for this xbkTreeNode.</font></li>
+<li><font class='paramType'>xbkTree</font>
+<font class='paramFieldName'>xbkTreeRef</font> 
+<br><font class='paramComment'>A reference to the xbkTree that created this xbkTreeNode.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='hidden' >
+<hr class='methodHR'>
+<font class='methodName'>hidden(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bHide</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Hide a folder or file, default to false.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bHide</font> 
+<br><font class='paramComment'></font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>Nothing</font>
+<font class='paramComment'></font>
+</a>
+<a name='addChildNode' >
+<hr class='methodHR'>
+<font class='methodName'>addChildNode(</font><font class='paramType'>xbkTreeNode</font> <font class='paramFieldName'>xbkNewNode</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Add a xbkTreeNode.</font>
+<li><font class='paramType'>xbkTreeNode</font>
+<font class='paramFieldName'>xbkNewNode</font> 
+<br><font class='paramComment'>A xbkTreeNode to add.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>Nothing</font>
+<font class='paramComment'></font>
+</a>
+<a name='removeChildNode' >
+<hr class='methodHR'>
+<font class='methodName'>removeChildNode(</font><font class='paramType'>String</font> <font class='paramFieldName'>id</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Add a xbkTreeNode.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>id</font> 
+<br><font class='paramComment'>Id of a xbkTreeNode to remove.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>Nothing</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkTreeNode.html'class='elink'>xbkTreeNode</a>
+</BODY>

@@ -1,0 +1,36 @@
+	.colHeader {
+	 	border-left: 1px solid white;
+		border-top: 1px solid white;
+		border-bottom: 1px solid black;
+		border-right: 1px solid black;
+		background-Color: silver;
+		font-family: tahoma;
+		font-weight: bold;
+		font-size: 14px;	
+		color: ghostwhite;
+	}
+	.xbkListCol {
+		font-family: tahoma;
+		font-size: 13px;
+		width: 50;
+		padding-left: 5;
+		margin-left: 2;		
+		overflow: hidden;
+		vertical-align : middle;
+		/*border-bottom: 1px solid silver;*/
+	
+	}
+	
+	.xbkListCol2 {
+		font-family: tahoma;
+		font-size: 13px;
+		width: 50;
+		padding-left: 5;
+		margin-left: 2;		
+		overflow: hidden;
+		vertical-align : middle;
+		background-Color: ghostwhite;
+		/*border-bottom: 1px solid silver;*/
+	
+	}
+

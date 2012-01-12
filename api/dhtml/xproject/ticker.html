@@ -1,0 +1,143 @@
+<!DOCTYPE HTML public "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>JavaScript Ticker 1.2</TITLE>
+<style type="text/css">
+.link{font-family:verdana,arial,helvetica; font-size:8pt; color:#003399; font-weight:normal}
+.link:hover{font-family:verdana,arial,helvetica; font-size:8pt; color:#0099FF; font-weight:normal}
+.tick{font-family:verdana,arial,helvetica; font-size:10pt; color:#003399; font-weight:bold}
+.tick:hover{font-family:verdana,arial,helvetica; font-size:10pt; color:#0099FF; font-weight:bold}
+.header{font-family:arial,verdana,helvetica; font-size:20pt; color:#DEAC00; font-weight:bold}
+</style>
+<SCRIPT LANGUAGE=JAVASCRIPT>
+// Location of this script:
+// http://www.qiksearch.com/javascripts/
+//     ticker12.htm
+//**************************************
+//     *******
+//* JavaScript Ticker 1.2 *
+//* Ticks a number of messages*
+//* (c) Premshree Pillai, *
+//* http://www.qiksearch.com *
+//* E-mail : premshree@hotmail.com*
+//* Use the script freely as long as thi
+//     s *
+//* message is intact *
+//**************************************
+//     *******
+window.onerror = null;
+var bName = navigator.appName;
+var bVer = parseInt(navigator.appVersion);
+var NS4 = (bName == "Netscape" && bVer >= 4);
+var IE4 = (bName == "Microsoft Internet Explorer" 
+&& bVer >= 4);
+var NS3 = (bName == "Netscape" && bVer < 4);
+var IE3 = (bName == "Microsoft Internet Explorer" 
+&& bVer < 4);
+var i=0;
+var top_pos = 60;
+var left_pos = 200;
+var time_length = 1000;
+var div_name = "qiksearch";
+var ticker_msg = new Array(
+"Welcome to Qiksearch",
+"Intellisearch Bar NOW!",
+"Premshree Pillai",
+"Meta Tag Generator Online",
+"Free JavaScripts" );
+var ticker_url = new Array(
+"http://www.qiksearch.com",
+"http://intellisearch.cjb.net",
+"http://premshree.qik.cjb.net",
+"http://metataggen.qik.cjb.net",
+"http://www.qiksearch.com/javascripts.htm" );
+var ticker_len = ticker_msg.length;
+for(var l=0; l<ticker_len; l++)
+
+
+    {
+    document.write('<DIV id="' + div_name + l + '" style="position:absolute; visibility:hidden; top:' + top_pos + '; left:' + left_pos + '">' + '<TABLE bgcolor="#000000" cellspacing="0" cellpadding="1" width="400"><TR><TD><TABLE width="100%" bgcolor="#EFEFEF"><TR><TD><CENTER><A href="' + ticker_url[l] + '" class="tick">' + ticker_msg[l] + '</CENTER></A></TD>');
+    document.write('</TR></TABLE></TD></TR></TABLE>' + '</DIV>');
+}
+
+
+    if (NS4 || IE4) {
+
+
+        if (navigator.appName == "Netscape") {
+        layerStyleRef="layer.";
+        layerRef="document.layers";
+        styleSwitch="";
+
+
+        }else{
+        layerStyleRef="layer.style.";
+        layerRef="document.all";
+        styleSwitch=".style";
+    }
+}
+//SCROLL
+
+
+    function tick(){
+
+
+        if (NS4 || IE4) {
+        if(i<ticker_len)
+
+
+            {
+            if(i==0)
+
+
+                { 
+                eval(layerRef+'["'+div_name+(ticker_len-1)+'"]'+
+                styleSwitch+'.visibility="hidden"');
+            }
+            if(i>0)
+
+
+                { 
+                eval(layerRef+'["'+div_name+(i-1)+'"]'+
+                styleSwitch+'.visibility="hidden"');
+            }
+            eval(layerRef+'["'+div_name+i+'"]'+
+            styleSwitch+'.visibility="visible"');
+        }
+        if(i<ticker_len-1)
+
+
+            {
+            i++;
+        }
+        else
+
+
+            {
+            i=0;
+        }
+        setTimeout("tick()",time_length);
+    }
+}
+tick();
+</SCRIPT>
+</HEAD>
+<BODY bgcolor="#FFFFFF">
+<CENTER>
+<span class="header">JavaScript Ticker 1.2</span>
+</CENTER>
+<BR><BR><BR>
+<TABLE align="center" width="400"><TR><TD>
+<FONT face="verdana,arial,helvetica" size="-1" color="#000000">
+this is a JavaScript Ticker which ticks a number of messages like the one shown above.
+You can ADD more messages in the array <FONT face="courier">ticker_msg</FONT>. The URL for that
+message should be added to the array <FONT face="courier">ticker_url</FONT>.
+<BR><BR>Change the position of the ticker by changing the variables <FONT face="courier">top_pos</FONT> and <FONT face="courier">left_pos</FONT>. You can change the ticker speed by changing the value of the variable <FONT face="courier">time_length</FONT>. (Here it is 2000, which means that the ticker message will change every 2000 milliseconds, i.e every 2 seconds).
+</FONT>
+</TD></TR></TABLE>
+<BR>
+<CENTER><A href="mailto:premshree@hotmail.com" class="link">© Premshree Pillai</A></CENTER>
+<BR>
+<CENTER><A href="http://www.qiksearch.com/javascripts/ticker12.htm"><FONT face="arial,verdana,helvetica" size="-2" color="#CCCCCC">http://www.qiksearch.com/javascripts/ticker12.htm</FONT></A></CENTER>
+</BODY>
+</HTML>

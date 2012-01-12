@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkFileExplorer</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/ui/xbkIconBrowser/xbkIconBrowser.js'></script>
+	<script src='../src/util/xbkTreeNode/xbkTreeNode.js'></script>
+	<script src='../src/ui/xbkTree/xbkTree.js'></script>
+	<script src='../src/util/xbkNode/xbkNode.js'></script>
+	<script src='../src/ui/xbkFileExplorer/xbkFileExplorer.js'></script>
+	<LINK REL='stylesheet' HREF='../src/css/xbkMenu.css' TYPE='text/css'>
+
+	<style>
+		.xbkIconBrowserStyle {
+			width: 75;
+			height: 75;
+			font-family: MS Sans serif;
+			font-size: 8px;
+			text-align: center;
+			/*cursor: hand;*/
+			color: black;
+		}
+		.treeText {
+			font-family: tahoma;
+			font-size: 12px;
+			vertical-align: bottom;
+			text-decoration: none;
+			color: black;
+		}
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	
+	<!-- source script... this block MUST be separate from the block above -->
+	<script>
+		var myExplorer = null;
+		function init() {
+			myExplorer = new xbkFileExplorer("myExplorer", null);
+			with ( myExplorer ) {
+				setLeft( 150 );
+				setTop( 50 );
+				setWidth( 400 );
+				setHeight( 200 );
+				setVis("show");
+				setBgColor("#D6D3CE");
+				setBorderLeft( 1,"black");
+				setBorderTop( 1,"black"); // #D6D3CE
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				
+				root_0 = getParentNode("PARENT_0");
+				root_1 = getParentNode("PARENT_1");		
+
+				item_0 = getChildNode("CHILD 0");
+				item_1 = getChildNode("CHILD 1");
+				item_2 = getChildNode("CHILD 2");
+				item_3 = getChildNode("CHILD 3");
+			
+				with(root_0) {
+					addChildNode(item_0);
+					addChildNode(item_1);
+					addChildNode(root_1);		
+				}
+				with(root_1) {
+					addChildNode(item_2);
+					addChildNode(item_3);	
+				}
+				addRoot(root_0);	
+
+			}
+		}
+		function NEW_HANDLER() {
+			//alert("click File");
+		}
+		
+		var CHILD_COUNT = 4;
+		function addItem(){
+			var node = myExplorer.tree.getSelectedNode();
+			if(node) {
+				if (node.bFolder) {
+					var item = myExplorer.getChildNode("CHILD " + CHILD_COUNT++);
+					node.addChildNode(item);
+					myExplorer.tree.draw();
+					myExplorer.drawIcon(node);
+				}	
+			}
+		}
+
+	</script>
+</head>
+
+
+<body bgcolor="white" onload="init();">
+	<h1> Example --> xbkFileExplorer</h1>
+	<a href="javascript:myExplorer.setWidth(myExplorer.getWidth()+5);">resize width ++</a><br>
+	<a href="javascript:myExplorer.setWidth(myExplorer.getWidth()-5);">resize width --</a><br>
+	<a href="javascript:myExplorer.setHeight(myExplorer.getHeight()+5);">resize height ++</a><br>
+	<a href="javascript:myExplorer.setHeight(myExplorer.getHeight()-5);">resize height --</a><br>
+	<a href="javascript:myExplorer.removeSelectedItem()">remove selected</a><br>
+	<a href="javascript:addItem()">add item</a><br>
+	<a href="javascript:myExplorer.setVis('hidden')">hide</a><br>
+	<a href="javascript:myExplorer.setVis('show')">show</a><br>
+</body>
+
+
+</html>

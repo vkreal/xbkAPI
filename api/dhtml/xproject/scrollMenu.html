@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>Floating Menu</TITLE>
+<SCRIPT LANGUAGE=JAVASCRIPT>
+<!--
+function ScrollMenu()
+
+
+    {
+    	var menuLeft= 5;
+    	var menuTop = 10;
+    	var scrollDelay = 100;
+    	if (document.all.menu.style.pixelLeft < document.body.scrollLeft + menuLeft)
+
+
+        	{
+        		document.all.menu.style.pixelLeft++;
+        		setTimeout('ScrollMenu()', scrollDelay);
+        	}
+        	else if (document.all.menu.style.pixelTop < document.body.scrollTop + menuTop)
+
+
+            	{
+            		document.all.menu.style.pixelTop++;
+            		setTimeout('ScrollMenu()', scrollDelay);
+            	}
+            	else if (document.all.menu.style.pixelLeft > document.body.scrollLeft + menuLeft)
+
+
+                	{
+                		document.all.menu.style.pixelLeft--;
+                		setTimeout('ScrollMenu()', scrollDelay);
+                	}
+                	else if (document.all.menu.style.pixelTop > document.body.scrollTop + menuTop)
+
+
+                    	{
+                    		document.all.menu.style.pixelTop--;
+                    		setTimeout('ScrollMenu()', scrollDelay);
+                    	}
+                }
+                -->
+                </SCRIPT>
+                <style type="text/css">
+                <!--
+                body{ margin-left:5px; margin-top:10px; background-color:white; font-family:Verdana; font-size:12px; font-style:normal; font-weight:bold; text-decoration:none; color:black; }
+                a:link, a:active, a:visited { text-decoration:underline; color:black; }
+                a:hover { text-decoration:underline; color:silver; }
+                -->
+                </style>
+                </HEAD>
+                <BODY onScroll="ScrollMenu()">
+                <DIV id="menu" style="position:absolute; left:5px; top:10px; width:100px; background-color:maroon; border:2px solid black; padding:2px;">
+                <A href="link1.htm">Link 1</A><BR>
+                <A href="link2.htm">Link 2</A><BR>
+                <A href="link3.htm">Link 3</A><BR>
+                <A href="link4.htm">Link 4</A><BR>
+                <A href="link5.htm">Link 5</A>
+                </DIV>
+                <DIV style="height:1000px; width:1000px;"></DIV>
+                </BODY>
+                </HTML>

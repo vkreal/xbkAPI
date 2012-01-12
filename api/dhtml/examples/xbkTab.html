@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>xbkAPI example: xbkMenu</title>
+	<script src='../src/util/xbkObject/xbkObject.js'></script>
+	<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='../src/util/xbkNode/xbkNode.js'></script>
+	<script src='../src/ui/xbkTab/xbkTab.js'></script>
+	
+	<style>	
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	</style>
+	<script>
+		var myTabView = null;
+		
+		function init() {
+			myTabView = new xbkTab("myTabView", null );
+			with(myTabView) {
+				setWidth( 300 );
+				setHeight( 200 );
+				setLeft( 100 );
+				setTop( 100 );
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderRight( 1,"#D6D3CE");
+				setBorderTop( 1,"#D6D3CE");
+				setBorderBottom( 1,"gray");
+				//setBgColor("silver");
+				var node_0 = addItem("Tab 1", TEST_HANDLER, null );
+				node_0.setInnerHTML("<b><i>Tab 1 html string</i></b>");
+				var node_1 = addItem("Tab 2", null);
+				node_1.setInnerHTML("<b><i>Tab 2 html string</i></b>");
+				var node_2 = addItem("Tab 3", null);
+				node_2.setInnerHTML("<b><i>Tab 3 html string</i></b>");
+				setVis("show");
+			}
+		}
+
+		function TEST_HANDLER() {
+			alert("click....");
+		}
+
+	</script>
+
+</head>
+<body onload='init();'>
+<h1>
+		Example	 --> xbkTab
+</h1>
+</body>
+</html>
+

@@ -1,0 +1,45 @@
+<HTML>
+<style>
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+	
+	pre {
+		background-Color:silver;
+		color:white;
+	}
+
+</style>
+<body>
+	<h1>
+		Simple Example Code  --> xbkLinkedList
+	</h1>
+
+	<pre>
+		var id = 0;
+		
+		function node(id,text) {
+			this.id   = id||null;
+			this.text = text||null;
+		}
+
+		// Create a new Linked-List
+		var myLinkList = new xbkLinkedList();
+
+		// put node object into list
+		with(myLinkList){
+			insert(new node("id_"+id, "node"+id++));
+			insert(new node("id_"+id, "node"+id++));
+			insert(new node("id_"+id, "node"+id++));
+			insert(new node("id_"+id, "node"+id++));
+		}
+	</pre>
+	
+
+</body>
+
+</HTML>
+

@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkMenuSystem" version="1.1" since="1.0">
+<desc>
+<![CDATA[
+The xbkMenuSystem class provides menu system for any xbkAPI web applications.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkMenuSystem" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkMenuSystem." />
+<param name="parent" typename="xbkLayer" comment="The parent of the xbkMenuSystem object if it has one." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="addRoot" comment="" >
+<method_desc>
+<![CDATA[
+Add a root to the main menu system.
+]]>
+</method_desc>
+<params>
+<param name="sName" typename="Text" comment="to be use as name." />
+<param name="fHandler" typename="Handler" comment="to be use when user click." />
+</params>
+<return typename="xbkMenu" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+</examples>
+<extends name="xbkMenu" />
+</class>

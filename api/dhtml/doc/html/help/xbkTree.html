@@ -1,0 +1,103 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+&lt;script src='../src/util/xbkTreeNode/xbkTreeNode.js'&gt;&lt;/script&gt;
+&lt;script src='../src/ui/xbkTree/xbkTree.js'&gt;&lt;/script&gt;
+&lt;style&gt;
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+	.treeText {
+		font-family: tahoma;
+		font-size: 12px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: black;
+	}
+
+&lt;/style&gt;
+
+&lt;script&gt;
+	var tree = null;
+	function init() {
+		tree = new xbkTree( "tree", null );
+		var root_0 = null;
+		var root_1 = null;	
+
+		var item_0 = null;
+		var item_1 = null;
+		var item_2 = null;
+		var item_3 = null;
+
+		with( tree ) {
+			setLeft( 150 );
+			setTop( 50 );
+			setWidth( 250 );
+			setHeight( 200 );
+			setBgColor("silver");
+			setVis( "show" );
+
+			root_0 = getParentNode("PARENT_0", xbkTREE_NODE_HANDLER);
+			root_1 = getParentNode("PARENT_1", xbkTREE_NODE_HANDLER);		
+
+			item_0 = getChildNode("CHILD 0",xbkTREE_NODE_HANDLER);
+			item_1 = getChildNode("CHILD 1",xbkTREE_NODE_HANDLER);
+			item_2 = getChildNode("CHILD 2",xbkTREE_NODE_HANDLER);
+			item_3 = getChildNode("CHILD 3",xbkTREE_NODE_HANDLER);
+			
+			with(root_0) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(root_1);		
+			}
+			with(root_1) {
+				addChildNode(item_2);
+				addChildNode(item_3);	
+			}
+			addRoot(root_0);	
+		}
+	}
+	
+	var CHILD_COUNT = 4;	
+
+	function xbkTREE_NODE_HANDLER(obj) {
+		//alert(obj.text);
+	}
+	function remove() {
+		tree.removeNode( tree.selected.id );
+	}
+	function addItem(){
+		var node = tree.getSelectedNode();
+		if(node) {
+			if (node.bFolder) {
+				var item = tree.getChildNode("NEW CHILD " + CHILD_COUNT++);
+				node.addChildNode(item);
+				tree.draw();
+			}	
+		}
+	}
+&lt;/script&gt;
+	
+&lt;body onload="init()"&gt;
+&lt;h1&gt;
+	Example  --&gt; xbkTree
+&lt;/h1&gt;	
+	&lt;a href="javascript:tree.setWidth(tree.getWidth()+5);"&gt;resize width ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:tree.setWidth(tree.getWidth()-5);"&gt;resize width --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:tree.setHeight(tree.getHeight()+5);"&gt;resize height ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:tree.setHeight(tree.getHeight()-5);"&gt;resize height --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:addItem();"&gt;addItem&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:remove();"&gt;remove selected&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:tree.setVis('hidden')"&gt;hide&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:tree.setVis('show')"&gt;show&lt;/a&gt;&lt;br&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</pre>

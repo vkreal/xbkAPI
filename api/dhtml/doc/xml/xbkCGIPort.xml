@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkCGIPort" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+The xbkCGIPort provides CGI tasks that passes data back and forth and queing. The xbkCGIPort receives data from a CGI program and then directs that data to the correct function.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkCGIPort" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="target" typename="Refence" comment="Location on the cgi target." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="add" comment="" >
+<method_desc>
+<![CDATA[
+A new cgi call command object to the que.
+]]>
+</method_desc>
+<params>
+<param name="commandObj" typename="Command" comment="Command object created." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="command" comment="" >
+<method_desc>
+<![CDATA[
+A new command object.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="Object" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="xbkObject" />
+</class>

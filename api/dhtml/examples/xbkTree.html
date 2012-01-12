@@ -1,0 +1,98 @@
+<html>
+<script src='../src/util/xbkObject/xbkObject.js'></script>
+<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+<script src='../src/util/xbkTreeNode/xbkTreeNode.js'></script>
+<script src='../src/ui/xbkTree/xbkTree.js'></script>
+<style>
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+	.treeText {
+		font-family: tahoma;
+		font-size: 12px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: black;
+	}
+
+</style>
+
+<script>
+	var tree = null;
+	function init() {
+		tree = new xbkTree( "tree", null );
+		var root_0 = null;
+		var root_1 = null;	
+
+		var item_0 = null;
+		var item_1 = null;
+		var item_2 = null;
+		var item_3 = null;
+
+		with( tree ) {
+			setLeft( 150 );
+			setTop( 50 );
+			setWidth( 250 );
+			setHeight( 200 );
+			setBgColor("silver");
+			setVis( "show" );
+
+			root_0 = getParentNode("PARENT_0", xbkTREE_NODE_HANDLER);
+			root_1 = getParentNode("PARENT_1", xbkTREE_NODE_HANDLER);		
+
+			item_0 = getChildNode("CHILD 0",xbkTREE_NODE_HANDLER);
+			item_1 = getChildNode("CHILD 1",xbkTREE_NODE_HANDLER);
+			item_2 = getChildNode("CHILD 2",xbkTREE_NODE_HANDLER);
+			item_3 = getChildNode("CHILD 3",xbkTREE_NODE_HANDLER);
+			
+			with(root_0) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(root_1);		
+			}
+			with(root_1) {
+				addChildNode(item_2);
+				addChildNode(item_3);	
+			}
+			addRoot(root_0);	
+		}
+	}
+	
+	var CHILD_COUNT = 4;	
+
+	function xbkTREE_NODE_HANDLER(obj) {
+		//alert(obj.text);
+	}
+	function remove() {
+		tree.removeNode( tree.selected.id );
+	}
+	function addItem(){
+		var node = tree.getSelectedNode();
+		if(node) {
+			if (node.bFolder) {
+				var item = tree.getChildNode("NEW CHILD " + CHILD_COUNT++);
+				node.addChildNode(item);
+				tree.draw();
+			}	
+		}
+	}
+</script>
+	
+<body onload="init()">
+<h1>
+	Example  --> xbkTree
+</h1>	
+	<a href="javascript:tree.setWidth(tree.getWidth()+5);">resize width ++</a><br>
+	<a href="javascript:tree.setWidth(tree.getWidth()-5);">resize width --</a><br>
+	<a href="javascript:tree.setHeight(tree.getHeight()+5);">resize height ++</a><br>
+	<a href="javascript:tree.setHeight(tree.getHeight()-5);">resize height --</a><br>
+	<a href="javascript:addItem();">addItem</a><br>
+	<a href="javascript:remove();">remove selected</a><br>
+	<a href="javascript:tree.setVis('hidden')">hide</a><br>
+	<a href="javascript:tree.setVis('show')">show</a><br>
+</body>
+
+</html>

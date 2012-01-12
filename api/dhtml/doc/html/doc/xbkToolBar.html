@@ -1,0 +1,96 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkToolBar documentation</title>
+<BODY>
+<h1>xbkToolBar</h1></font>
+<p>The xbkToolBar class provides a horizontal or vertical tool bar system.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.0
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkToolBar' >
+<hr class='methodHR'>
+<font class='methodName'>xbkToolBar(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkToolBar.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The parent of the xbkToolBar object if it has one.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='autostrechHorizontal' >
+<hr class='methodHR'>
+<font class='methodName'>autostrechHorizontal(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Autostrech horizontal.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'>Set to true or false.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='autostrechVertical' >
+<hr class='methodHR'>
+<font class='methodName'>autostrechVertical(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Autostrech vertical.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'>Set to true or false.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setHorizontalToolBar' >
+<hr class='methodHR'>
+<font class='methodName'>setHorizontalToolBar(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set Tool bar to be horizontal or vertical, default is horizontal.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'>Set to true or false.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='addItem' >
+<hr class='methodHR'>
+<font class='methodName'>addItem(</font><font class='paramType'>String</font> <font class='paramFieldName'>img</font>, <font class='paramType'>String</font> <font class='paramFieldName'>imgOver</font>, <font class='paramType'>String</font> <font class='paramFieldName'>imgDown</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Adds an item to the Menu.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>img</font> 
+<br><font class='paramComment'>Image to use.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>imgOver</font> 
+<br><font class='paramComment'>Image for mouseover event.</font></li>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>imgDown</font> 
+<br><font class='paramComment'>Image for onclick event.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Referece to a handler function.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='removeItem' >
+<hr class='methodHR'>
+<font class='methodName'>removeItem(</font><font class='paramType'>Number</font> <font class='paramFieldName'>index</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Remove a item from the xbkToolBar</font>
+<li><font class='paramType'>Number</font>
+<font class='paramFieldName'>index</font> 
+<br><font class='paramComment'>The index of the xbkToolBar to be remove.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='draw' >
+<hr class='methodHR'>
+<font class='methodName'>draw(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Draw the xbkToolBar</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkToolBar.html'class='elink'>xbkToolBar</a>
+</BODY>

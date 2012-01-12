@@ -1,0 +1,61 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLabel/xbkLabel.js'&gt;&lt;/script&gt;
+	
+	&lt;style&gt;
+		.textStyle {
+			font-family: tahoma, arial;
+			text-decoration: none;
+			color: blue;
+			font-weight: bold;
+		}
+		
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	&lt;script&gt;
+		var label = null;
+		function init() {
+			label = new xbkLabel();
+			with( label ) {
+				setLeft( 150 );
+				setTop( 100 );
+				setWidth( 100 );
+				setHeight( 20 );
+				setBgColor("silver");
+				setBorderLeft( 1,"gray");
+				setBorderTop( 1,"gray");
+				setBorderBottom( 1,"black");
+				setBorderRight( 1,"black");
+				setText("LABEL");
+				setStyle("textStyle");
+				setVis( "show" );
+			}
+		}
+		
+		function myclick() {
+			//alert("click..");
+		}
+	&lt;/script&gt;
+	&lt;body onload="init()"&gt;
+	&lt;h1&gt;
+		Example  --&gt; xbkLabel
+	&lt;/h1&gt;
+	&lt;a href="javascript:label.setWidth(label.getWidth()+5);"&gt;resize width ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:label.setWidth(label.getWidth()-5);"&gt;resize width --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:label.setHeight(label.getHeight()+5);"&gt;resize height ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:label.setHeight(label.getHeight()-5);"&gt;resize height --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:label.setVis('show');"&gt;show&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:label.setVis('hidden');"&gt;hide&lt;/a&gt;&lt;br&gt;	
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>

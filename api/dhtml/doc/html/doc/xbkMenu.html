@@ -1,0 +1,123 @@
+<LINK REL='stylesheet' HREF='styles.css' TYPE='text/css'>
+<title>xbkMenu documentation</title>
+<BODY>
+<h1>xbkMenu</h1></font>
+<p>The xbkMenu class provides a horizontal or vertical menu system.</p>
+<br><b>Since:</b>&nbsp;1.0
+<br><b>Version:</b>&nbsp;1.0
+<br><b>Extends:</b>&nbsp;<a href='xbkLayer.html'>xbkLayer</a>
+<h2>Constructor</h2>
+<a name='xbkMenu' >
+<hr class='methodHR'>
+<font class='methodName'>xbkMenu(</font><font class='paramType'>String</font> <font class='paramFieldName'>inst</font>, <font class='paramType'>xbkLayer</font> <font class='paramFieldName'>parent</font><font class='methodName'>)</font><br>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>inst</font> 
+<br><font class='paramComment'>The name or id to be use for this xbkMenu.</font></li>
+<li><font class='paramType'>xbkLayer</font>
+<font class='paramFieldName'>parent</font> 
+<br><font class='paramComment'>The parent of the xbkMenu object if it has one.</font></li>
+</a>
+<h2>Methods</h2>
+<a name='hideALLxbkMenu' >
+<hr class='methodHR'>
+<font class='methodName'>hideALLxbkMenu(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Hide all the xbkMenu.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='autostrechHorizontal' >
+<hr class='methodHR'>
+<font class='methodName'>autostrechHorizontal(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Autostrech horizontal.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'>Set to true or false.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='autostrechVertical' >
+<hr class='methodHR'>
+<font class='methodName'>autostrechVertical(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Autostrech vertical.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'>Set to true or false.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setVis' >
+<hr class='methodHR'>
+<font class='methodName'>setVis(</font><font class='paramType'>String</font> <font class='paramFieldName'>type</font>, <font class='paramType'>Number</font> <font class='paramFieldName'>x</font>, <font class='paramType'>Number</font> <font class='paramFieldName'>y</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the xbkMenu visibility and x,y location.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>type</font> 
+<br><font class='paramComment'>[show|hidden|inherit]</font></li>
+<li><font class='paramType'>Number</font>
+<font class='paramFieldName'>x</font> 
+<br><font class='paramComment'>location x</font></li>
+<li><font class='paramType'>Number</font>
+<font class='paramFieldName'>y</font> 
+<br><font class='paramComment'>location y</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setHorizontalMenu' >
+<hr class='methodHR'>
+<font class='methodName'>setHorizontalMenu(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set menu to be horizontal or vertical, default is horizontal.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'>Set to true or false.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='addItem' >
+<hr class='methodHR'>
+<font class='methodName'>addItem(</font><font class='paramType'>String</font> <font class='paramFieldName'>text</font>, <font class='paramType'>Reference</font> <font class='paramFieldName'>fHandler</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Adds an item to the Menu.</font>
+<li><font class='paramType'>String</font>
+<font class='paramFieldName'>text</font> 
+<br><font class='paramComment'>Text that appears for the item.</font></li>
+<li><font class='paramType'>Reference</font>
+<font class='paramFieldName'>fHandler</font> 
+<br><font class='paramComment'>Referece to a handler function.</font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='addBar' >
+<hr class='methodHR'>
+<font class='methodName'>addBar(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Adds a separator to divide groups of menu commands.</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='setMouseOverHightLight' >
+<hr class='methodHR'>
+<font class='methodName'>setMouseOverHightLight(</font><font class='paramType'>Boolean</font> <font class='paramFieldName'>bType</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Set the mouseover event to hightlight the selections.</font>
+<li><font class='paramType'>Boolean</font>
+<font class='paramFieldName'>bType</font> 
+<br><font class='paramComment'></font></li>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<a name='draw' >
+<hr class='methodHR'>
+<font class='methodName'>draw(</font><font class='methodName'>)</font><br>
+<font class='DOC_DESC'>Draw the xbkMenu</font>
+<br><font class='methodParams'>Returns:</font>
+<font class='paramType'>None</font>
+<font class='paramComment'></font>
+</a>
+<HR class='sectionHR'>
+<h2>Examples</h2>
+<a href='../../../examples/xbkMenu.html'class='elink'>xbkMenu</a>
+</BODY>

@@ -1,0 +1,191 @@
+<html>
+<script src='../src/util/xbkObject/xbkObject.js'></script>
+<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+<script src='../src/util/xbkTreeNode/xbkTreeNode.js'></script>
+<script src='../src/util/xbkDragAndDrop/xbkDragAndDrop.js'></script>
+<script src='../src/ui/xbkTree/xbkTree.js'></script>
+<script src='../src/util/xbkNode/xbkNode.js'></script>
+<script src='../src/ui/xbkIconBrowser/xbkIconBrowser.js'></script>
+<style>
+	.xbkIconBrowserStyle {
+			width: 75;
+			height: 75;
+			font-family: MS Sans serif;
+			font-size: 8px;
+			text-align: center;
+			/*cursor: hand;*/
+			color: black;
+	}
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+	.treeText {
+		font-family: tahoma;
+		font-size: 12px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: black;
+		cursor: default;
+	}
+
+</style>
+
+<script>
+	var CURRENT_DRAG_NODE = null;
+	var dragTarget = null;
+	var dragTarget2 = null;
+	var tree = null;
+	var dnd=null;
+	function init() {
+
+		xbkIconMenu = new xbkIconBrowser( "xbkIconMenu" );
+			with( xbkIconMenu ) {
+				setWidth( 250 );
+				setHeight( 150 );
+				setLeft( 10 );
+				setTop( 10 );
+				setBgColor("silver");
+				setVis("show");
+			
+				setHighLightColor("ghostwhite");
+				addItem("icon_0", "resume.doc", "../images/xbkIconView/docL.gif", userDefinedFunction);
+				addItem("icon_1", "payroll.xls", "../images/xbkIconView/xlsL.gif", userDefinedFunction);
+				addItem("icon_2", "missy.jpg", "../images/xbkIconView/gifL.gif", userDefinedFunction);
+				sort();
+				//selectIconById("icon_0");
+				
+			}
+
+
+
+		tree = new xbkTree( "tree", null );
+		var root_0 = null;
+		var root_1 = null;	
+
+		var item_0 = null;
+		var item_1 = null;
+		var item_2 = null;
+		var item_3 = null;
+
+		with( tree ) {
+			setLeft( 300 );
+			setTop( 10 );
+			setWidth( 250 );
+			setHeight( 150 );
+			setBgColor("silver");
+			setVis( "show" );
+
+			root_0 = getParentNode("PARENT_0", treeClickFunc);
+			root_1 = getParentNode("PARENT_1", treeClickFunc);
+
+			item_0 = getChildNode("CHILD 0", treeClickFunc);
+			item_1 = getChildNode("CHILD 1", treeClickFunc);
+			item_2 = getChildNode("CHILD 2",treeClickFunc)
+			item_3 = getChildNode("CHILD 3",treeClickFunc);
+			
+			with(root_0) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(root_1);		
+			}
+			with(root_1) {
+				addChildNode(item_2);
+				addChildNode(item_3);	
+			}
+			addRoot(root_0);		
+			
+			CONTAINER = new xbkLayer();
+			with ( CONTAINER ) {
+				setLeft( 20 );
+				setTop( 200 );
+				setWidth( 400 );
+				setHeight( 100 );
+				setBgColor("silver");
+				setVis("show");
+			}
+		
+			dragTarget = new xbkLayer(CONTAINER);
+			with ( dragTarget ) {
+				setLeft( 150 );
+				setTop( 25 );
+				setWidth( 100 );
+				setHeight( 50 );
+				setBgColor("silver");
+				setBorderLeft( 1,"black");
+				setBorderTop( 1,"black");
+				setBorderBottom( 1,"black");
+				setBorderRight( 1,"black");
+				setVis("show");
+				setInnerHTML("<b><i>target 2</i></b>");
+			}
+
+			dragTarget2 = new xbkLayer(CONTAINER);
+			with ( dragTarget2 ) {
+				setLeft( 20 );
+				setTop( 25 );
+				setWidth( 100 );
+				setHeight( 50 );
+				setBgColor("silver");
+				setBorderLeft( 1,"black");
+				setBorderTop( 1,"black");
+				setBorderBottom( 1,"black");
+				setBorderRight( 1,"black");
+				setVis("show");
+				setInnerHTML("<b><i>target 1</i></b>");
+			}
+
+			dnd=new xbkDragAndDrop();
+			dnd.addDragSource(tree);
+			dnd.addDragSource(xbkIconMenu);
+			dnd.addTarget( dragTarget );
+			dnd.addTarget( dragTarget2 );
+			dnd.setDropTargetFunc( testDropFunc );
+			dnd.setOverTargetFunc( testOverFunc );
+			dnd.setOutTargetFunc( testOutFunc );
+			dnd.setStartDragFunc(testStartFunc);
+			dnd.setDragIconBgColor("blue")
+
+		}
+	}
+	
+	function testStartFunc ( DnDobj, target ) {
+			if(!dnd.getSelectItem()) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		
+		function testDropFunc( DnDobj , target ) {
+			target.setBgColor("silver");
+			var node=dnd.getSelectItem();
+			(node)?target.setInnerHTML(node.text):null;
+			dnd.setSelectItem(null);
+		}
+	
+		function testOverFunc( DnDobj , target) {
+			target.setBgColor("gray");
+		}
+		
+		function testOutFunc( DnDobj , target ) {
+			target.setBgColor("silver");
+		}
+		
+		function treeClickFunc(node) {
+			dnd.setSelectItem(node);
+		}
+		function userDefinedFunction(node) {
+			dnd.setSelectItem(node);
+		}
+	
+</script>
+	
+<body onload="init()" ondragstart="return false" onselectstart="return false">
+
+</body>
+
+</html>

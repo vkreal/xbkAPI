@@ -1,0 +1,92 @@
+<html>
+	<title>xbkapi</title>
+	<script src='dhtml/src/util/xbkObject/xbkObject.js'></script>
+	<script src='dhtml/src/ui/xbkLayer/xbkLayer.js'></script>
+	<script src='dhtml/src/util/xbkNode/xbkNode.js'></script>
+	<script src='dhtml/src/ui/xbkMenu/xbkMenu.js'></script>
+	<script src='dhtml/src/ui/xbkMenuSystem/xbkMenuSystem.js'></script>
+	<script src='dhtml/doc/html/doc/xbkGeneratedClassAtrribute.js'></script>
+	<script src='main.js'></script>
+	<LINK REL='stylesheet' HREF='dhtml/src/css/xbkMenu.css' TYPE='text/css'>
+		<LINK REL='stylesheet' HREF='dhtml/css/main.css' TYPE='text/css'>
+			<meta name="keywords" content="cross-browser,dom,dom2,cross,browser,dhtml,javascript,api,library,code,dynamic,inner,html,examples,horizontal,vertical,sliding,menus,scrollers,layers,CrossBrowserElement,programming,Internet,Explorer,Netscape,Gecko,Opera,Konqueror,AOL">
+			<style> .startStyle { font-family: MS sans serif; font-size: 10px; margin-left: 3; color: black; cursor: default; padding-top: 3px; }
+	.endStyle { font-family: MS sans serif; font-size: 10px; margin-left: 3; padding-top: 3px; color: white; cursor: default; }
+	body { /* overflow = "hidden"; background-Color: silver;*/ font-family: verdana; }
+	.myTitle { background-Color: #0099FF; font-weight: bold; font-size: 40px; color: ghostwhite; }
+	.mySubTitle { background-Color: #0099FF; font-weight: bold; font-size: 10px; color: ghostwhite; }
+	</style>
+			<script>
+	var LOGO 	= null;
+	var NAVBAR	= null;
+	var NAVBODY 	= null;
+	var MAINBODY	= null;
+	function init() {
+		MAINBODY = new xbkLayer();
+		LOGO = new xbkLayer();
+		NAVBAR = new xbkMenuSystem("NAVBAR");
+		with( LOGO ) {
+		 	setLeft( 0 );
+			setTop( 0 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 50 );
+			setVis("show");
+		
+			//setBgColor("#D6D3CE");
+			//setBorderLeft( 2,"#D6D3CE");
+			//setBorderTop( 2,"#D6D3CE");
+			//setBorderRight( 2,"gray");
+			//setBorderBottom( 2,"gray");
+			setInnerHTML(sLOGO);
+		}
+		
+		with( NAVBAR ) {
+			setMouseOverHightLight( true );
+		 	setLeft( 0 );
+			setTop( 55 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( 20 );
+			setVis("show");
+			setBgColor("#D6D3CE");
+			addRoot( "Home" , NAVBAR_HOME_CLK_HNDLR );
+			addRoot( "xbkAPI.DHTML",DHTML_CLK_HNDLR );
+			addRoot( "xbkAPI.NET",ASPNET_CLK_HNDLR );
+			addRoot( "Demo" , NAVBAR_DEMO_CLK_HNDLR );
+			addRoot( "Support" , NAVBAR_SUPPORT_CLK_HNDLR );
+		}
+		function DHTML_CLK_HNDLR() {
+			location="dhtml/index.html";
+		}
+		function ASPNET_CLK_HNDLR(){
+			location="http://w0550.www69.innerhost.com/";
+		}
+		function NAVBAR_HOME_CLK_HNDLR() {
+			MAINBODY.setInnerHTML(xbkWELCOME_HTML);
+		}
+		function NAVBAR_SUPPORT_CLK_HNDLR() {
+			MAINBODY.setInnerHTML(xbkSUPPORT_HTML);
+		}
+		function NAVBAR_DEMO_CLK_HNDLR() {
+			MAINBODY.setInnerHTML(xbkDEMO_HTML);
+		}
+		
+		with( MAINBODY ) {
+			setLeft( 0 ); // 150
+			setTop( 83 );
+			setWidth( xbkUtil.APP_WIDTH() );
+			setHeight( xbkUtil.APP_HEIGHT() - 83 );
+			setVis("show");
+			//setBgColor("#D6D3CE");
+			//setBorderLeft( 2,"#D6D3CE");
+			//setBorderTop( 2,"#D6D3CE");
+			//setBorderRight( 2,"gray");
+			//setBorderBottom( 2,"gray");
+			//setOverflow( "auto" );
+			setInnerHTML(xbkWELCOME_HTML);
+		}
+	}
+			</script>
+			<body onload="init();">
+				<P>&nbsp;</P>
+			</body>
+</html>

@@ -1,0 +1,74 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;xbkAPI example: xbkPopupMenu&lt;/title&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkPopupMenu/xbkPopupMenu.js'&gt;&lt;/script&gt;
+	&lt;LINK REL='stylesheet' HREF='../src/css/xbkMenu.css' TYPE='text/css'&gt;
+
+	&lt;style&gt;
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	
+	&lt;!-- source script... this block MUST be separate from the block above --&gt;
+	&lt;script&gt;
+		var myMenu = null;
+		
+		function init() {
+
+			myMenu = new xbkPopupMenu();
+			with ( myMenu ) {
+				setLeft( 100 );
+				setTop( 50 );
+				setWidth( 200 );
+				setHeight( 300 );
+				setVis("show");
+		
+				setBgColor("#D6D3CE");
+				setBorderLeft( 1,"#D6D3CE");
+				setBorderTop( 1,"#D6D3CE");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				
+				addItem( "New" , NEW_HANDLER );
+				addItem( "Open" , OPEN_HANDLER );
+				addItem( "Print" , PRINT_HANDLER );
+				addBar();
+				addItem( "Close" , CLOSE_HANDLER  );
+			}
+		}
+		function NEW_HANDLER() {
+			alert("click new");
+		}
+		function OPEN_HANDLER() {
+			alert("click open");
+		}
+		function PRINT_HANDLER() {
+			alert("click print");
+		}
+		function CLOSE_HANDLER() {
+			alert("click close");
+		}
+
+	&lt;/script&gt;
+&lt;/head&gt;
+
+
+&lt;body bgcolor="white" onload="init();"&gt;
+	&lt;h1&gt; Example --&gt; xbkPopupMenu&lt;/h1&gt;
+	&lt;a href="javascript:myMenu.setVis('hidden')"&gt;hide&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:myMenu.setVis('show')"&gt;show&lt;/a&gt;&lt;br&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;
+</pre>

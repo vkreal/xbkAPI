@@ -1,0 +1,61 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/util/xbkDragEvent/xbkDragEvent.js'&gt;&lt;/script&gt;
+	&lt;style&gt;
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	&lt;script&gt;
+		drag = 0	
+		move = 0
+		var outer = null;
+		var inner = null;
+		function init() {
+			outer = new xbkLayer();
+			with( outer ) {
+				setLeft( 200 );
+				setTop( 100 );
+				setWidth( 200 );
+				setHeight( 50 );
+				setBgColor("silver");
+				setVis( "show" );
+			}
+
+			inner = new xbkLayer(outer);
+			with( inner ) {
+				setLeft( outer.getWidth()-25 );
+				setTop(25);
+				setWidth( 25 );
+				setHeight( 25 );
+				setBgColor("red");
+				setVis( "show" );
+			}
+			
+			drag = new xbkDragEvent();
+			drag.enableDragEvent(inner);
+			drag.setBoundedToParent(true);
+
+		}
+	&lt;/script&gt;
+	&lt;body onload="init()"&gt;
+	&lt;h1&gt;
+		Example  --&gt; xbkLayer
+	&lt;/h1&gt;
+	&lt;a href="javascript:layer.setWidth(layer.getWidth()+5);"&gt;resize width ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setWidth(layer.getWidth()-5);"&gt;resize width --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setHeight(layer.getHeight()+5);"&gt;resize height ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setHeight(layer.getHeight()-5);"&gt;resize height --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setVis('show');"&gt;show&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setVis('hidden');"&gt;hide&lt;/a&gt;&lt;br&gt;	
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>

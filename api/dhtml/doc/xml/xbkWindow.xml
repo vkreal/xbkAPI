@@ -1,0 +1,84 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkWindow" version="1.1" since="1.0">
+<desc>
+<![CDATA[
+The xbkWindow Class creates a window like look and feel tool for any xbkAPI web applications.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkWindow" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkWindow." />
+<param name="parent" typename="xbkLayer" comment="The windows parent, if any." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="setWindowTitle" comment="" >
+<method_desc>
+<![CDATA[
+Set the title and style for the xbkWindow.
+]]>
+</method_desc>
+<params>
+<param name="text" typename="String" comment="Text for the title." />
+<param name="style" typename="String" comment="The class style name." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setCloseWindowHandler" comment="" >
+<method_desc>
+<![CDATA[
+Set the close window handler.
+]]>
+</method_desc>
+<params>
+<param name="func" typename="Handler" comment="Handler to be call when the window close." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setMinWindowHandler" comment="" >
+<method_desc>
+<![CDATA[
+Set the minimize window handler.
+]]>
+</method_desc>
+<params>
+<param name="func" typename="Handler" comment="Handler to be call when the window minimize." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setMaxWindowHandler" comment="" >
+<method_desc>
+<![CDATA[
+Set the maximize window handler.
+]]>
+</method_desc>
+<params>
+<param name="func" typename="Handler" comment="Handler to be call when the window maximize." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setIconWinHandler" comment="" >
+<method_desc>
+<![CDATA[
+Set the icon click handler.
+]]>
+</method_desc>
+<params>
+<param name="func" typename="Handler" comment="Handler to be call when the icon is click." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+<example url="pathToExampleFile" title="exampleTitle" comment="exampleComment" />
+</examples>
+<extends name="xbkLayer" />
+</class>

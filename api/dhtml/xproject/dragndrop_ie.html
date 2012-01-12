@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<TITLE>Drag and Drop Internet Explorer 4</TITLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+drag = 0
+move = 0
+
+
+var resizeDiv = null;
+
+function init() {
+	window.document.onmousemove = mouseMove
+	window.document.onmousedown = mouseDown
+	window.document.onmouseup = mouseUp
+	window.document.ondragstart = mouseStop
+	
+	resizeDiv =  document.getElementById("block2");
+}
+
+function mouseDown() {
+	if (drag) {
+		//alert(dragObj.id);
+		clickleft = window.event.x - parseInt(dragObj.style.width)
+		clicktop = window.event.y - parseInt(dragObj.style.top)
+		dragObj.style.zIndex += 1
+		move = 1
+		//window.status = "move x: " + clickleft  + " move y: " + clicktop;
+		//resizeDiv.style.left = clickleft;
+	}
+}
+
+function mouseStop() {
+	window.event.returnValue = false
+}
+
+
+var width = 0;
+
+function mouseMove() {
+	if (move) {
+		if(parseInt( dragObj.style.posWidth )>50 || window.event.x - clickleft>50){
+			dragObj.style.width = window.event.x - clickleft;
+		}
+		  //parseInt( dragObj.style.posWidth );
+		//dragObj.style.left = window.event.x - clickleft
+		//dragObj.style.top = window.event.y - clicktop
+		window.status = "move x: " + dragObj.style.left + " windw x: " + window.event.x;
+		//resizeDiv.style.width =  window.event.x - clickleft;
+		//width = parseInt( resizeDiv.style.posWidth );
+		
+		//resizeDiv.style.width = window.event.x - clickleft
+
+		//window.status = "new width: " + dragObj.style.width;
+
+	}
+}
+
+function mouseUp() {
+	move = 0
+}
+
+
+var stopBubble = false;
+
+
+function __mousedown(obj){
+	if(stopBubble){
+		return;
+	}
+	dragObj=block1; drag=1;	
+}
+
+
+//-->
+</SCRIPT>
+</HEAD>
+
+<BODY onLoad="init()" bgcolor="Black">
+
+<!--Simply insert your image or text or whatever between the DIV tag-->
+
+<DIV ID="block1" onMousedown="(stopBubble)?dragObj=block2:dragObj=block1; drag=1; stopBubble=false;" 
+	onMouseOut="drag=0;this.style.backgroundColor='blue';" onMouseOver="drag=0;this.style.backgroundColor='yellow';"
+	STYLE="position:absolute; left:50; top:50; width:300; height:50; background-Color:blue;cursor:move;">
+
+	
+	<DIV ID="block2" onMousedown="dragObj=block2; drag=1; stopBubble=true;" 
+		onMouseOut="drag=0;this.style.backgroundColor='red';" onMouseOver="drag=0;this.style.backgroundColor='green';"
+		STYLE="position:absolute; left:10; top:10; width:100; height:25; background-Color:red;">
+	</DIV>
+
+</DIV>
+
+
+
+
+
+
+</BODY>
+</HTML>

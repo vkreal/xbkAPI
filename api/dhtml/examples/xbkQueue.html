@@ -1,0 +1,43 @@
+<HTML>
+<style>
+	pre {
+		background-Color:silver;
+		color:white;
+	}
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+</style>
+<body>
+	<h1>
+		Simple Example Code  --> xbkQueClass
+	</h1>	
+	<pre>
+		var id = 0;
+
+		function node(id,text) {
+			this.id   = id||null;
+			this.text = text||null;
+		}
+
+		// Create a new Queue
+		var que = new xbkQueue();
+
+		// put node object into queue
+		with(que){
+			enqueue(new node("id_"+id, "node"+id++));
+			enqueue(new node("id_"+id, "node"+id++));
+			enqueue(new node("id_"+id, "node"+id++));
+			enqueue(new node("id_"+id, "node"+id++));
+		}
+		
+		// remove from queue
+		var queueNode = que.dequeue();
+		
+	</pre>
+</body>
+
+</HTML>

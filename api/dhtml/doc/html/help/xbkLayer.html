@@ -1,0 +1,51 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+	&lt;style&gt;
+		
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	&lt;script&gt;
+		var layer = null;
+		function init() {
+			layer = new xbkLayer();
+			with( layer ) {
+				setLeft( 200 );
+				setTop( 100 );
+				setWidth( 100 );
+				setHeight( 100 );
+				setBgColor("silver");
+				setBorderLeft( 1,"red");
+				setBorderTop( 1,"red");
+				setBorderBottom( 1,"black");
+				setBorderRight( 1,"black");
+				setVis( "show" );
+			}
+		}
+		
+		function myclick() {
+			//alert("click..");
+		}
+	&lt;/script&gt;
+	&lt;body onload="init()"&gt;
+	&lt;h1&gt;
+		Example  --&gt; xbkLayer
+	&lt;/h1&gt;
+	&lt;a href="javascript:layer.setWidth(layer.getWidth()+5);"&gt;resize width ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setWidth(layer.getWidth()-5);"&gt;resize width --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setHeight(layer.getHeight()+5);"&gt;resize height ++&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setHeight(layer.getHeight()-5);"&gt;resize height --&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setVis('show');"&gt;show&lt;/a&gt;&lt;br&gt;
+	&lt;a href="javascript:layer.setVis('hidden');"&gt;hide&lt;/a&gt;&lt;br&gt;	
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>

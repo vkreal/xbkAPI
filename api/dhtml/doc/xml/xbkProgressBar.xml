@@ -1,0 +1,50 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkProgressBar" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+The xbkProgressBar class provides visual feedback to users about the progress of task, such as loading an application or querying a database.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkProgressBar" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkProgressBar." />
+<param name="parent" typename="xbkLayer" comment="The parent of the xbkProgressBar object if it has one." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="setStyleClass" comment="" >
+<method_desc>
+<![CDATA[
+Set the style className for the current xbkProgessBar
+]]>
+</method_desc>
+<params>
+<param name="startStyleClass" typename="String" comment="The style class name for the start." />
+<param name="endStyleClass" typename="String" comment="The style class name for the end." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setPercentComplete" comment="" >
+<method_desc>
+<![CDATA[
+Set the percentage of completion.
+]]>
+</method_desc>
+<params>
+<param name="num" typename="Number" comment="Use the number 1-100 to represent the percent." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+</examples>
+<extends name="xbkLayer" />
+</class>

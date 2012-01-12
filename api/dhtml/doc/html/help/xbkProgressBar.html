@@ -1,0 +1,78 @@
+<style>
+pre{background-Color:#EBFFED;color:black;font-family:verdana;font-size:10px;}
+</style>
+<pre>
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;xbkAPI example: xbkProgressBar&lt;/title&gt;
+	&lt;script src='../src/util/xbkObject/xbkObject.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkLayer/xbkLayer.js'&gt;&lt;/script&gt;
+	&lt;script src='../src/ui/xbkProgressBar/xbkProgressBar.js'&gt;&lt;/script&gt;
+
+	&lt;style&gt;
+		.startStyleClass {
+			font-family: MS sans serif;
+			font-size: 10px;
+			margin-left: 3;
+			color: black;
+			cursor: default;
+			padding-top: 3px;
+		}
+		.endStyleClass {
+			font-family: MS sans serif;
+			font-size: 10px;
+			margin-left: 3;
+			padding-top: 3px;	
+			color: white;
+			cursor: default;
+		}
+		h1 {
+			font-family: Verdana;
+			font-size: medium;
+			font-weight: bold;
+			color: #0099FF;
+		}
+	&lt;/style&gt;
+	
+	&lt;!-- source script... this block MUST be separate from the block above --&gt;
+	&lt;script&gt;
+		var xbkBar = null;
+		function init() {
+			xbkBar = new xbkProgressBar("xbkBar");
+			with ( xbkBar ) {
+				setStyleClass("startStyleClass","endStyleClass");
+				setLeft( 100 );
+				setTop( 100 );
+				setWidth( 200 );
+				setHeight( 20 );
+				setBgColor("red", "silver");
+				setBorderLeft( 1,"black");
+				setBorderTop( 1,"black");
+				setBorderRight( 1,"black");
+				setBorderBottom( 1,"black");
+				setVis("show");
+			}
+			startProgressBar(0);
+		}
+
+		function startProgressBar(perc) {
+			xbkBar.setPercentComplete( perc );
+		
+			if ( perc &lt;= 100 ) {
+				perc++;
+				this.setTimeout( "startProgressBar("+perc+")" , 100 );
+			}
+		}
+
+
+	&lt;/script&gt;
+&lt;/head&gt;
+
+
+&lt;body bgcolor="white" onload="init();"&gt;
+	&lt;h1&gt; Example --&gt; xbkProgressBar&lt;/h1&gt;
+&lt;/body&gt;
+
+
+&lt;/html&gt;
+</pre>

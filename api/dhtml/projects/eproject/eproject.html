@@ -1,0 +1,342 @@
+<html>
+<script src='../../src/util/xbkObject/xbkObject.js'></script>
+<script src='../../src/ui/xbkLayer/xbkLayer.js'></script>
+<script src='../../src/util/xbkNode/xbkNode.js'></script>
+<script src='../../src/util/xbkTreeNode/xbkTreeNode.js'></script>
+<script src='../../src/util/xbkDragAndDrop/xbkDragAndDrop.js'></script>
+<script src='../../src/ui/xbkTree/xbkTree.js'></script>
+<script src='../../src/ui/xbkToolBar/xbkToolBar.js'></script>
+<script src='../../src/ui/xbkMenu/xbkMenu.js'></script>
+<script src='../../src/ui/xbkLabel/xbkLabel.js'></script>
+<script src='../../src/ui/xbkList/xbkList.js'></script>
+<link rel="stylesheet" type="text/css" href="xbkList.css">
+<script src='main.js'></script>
+<style>
+	.treeText {
+		font-family: tahoma;
+		font-size: 12px;
+		vertical-align: bottom;
+		text-decoration: none;
+		color: black;
+	}
+	.myTitle {
+		font-weight: bold;
+		font-size: 24px;	
+		color: blue;
+	}
+	.mySubTitle {
+		font-family: tahoma;
+		/*background-Color: #0099FF;*/
+		/*font-weight: bold;*/
+		font-size: 12px;	
+		color: black;
+	
+	}
+	.mySubTitle2 {
+		font-family: tahoma;
+		font-weight: bold;
+		font-size: 14px;	
+		color: ghostwhite;
+	
+	}
+	.monthStyle{
+		font-family: tahoma;
+		/*background-Color: #0099FF;*/
+		/*font-weight: bold;*/
+		font-size: 10px;
+		border-left: 1px solid black;	
+		color: red;
+	}
+	.dateStyle{
+		font-family: tahoma;
+		/*background-Color: #0099FF;*/
+		/*font-weight: bold;*/
+		font-size: 10px;	
+		color: black;
+		border-top: 1px solid black;
+		border-left: 1px solid black;
+		/*border-right: 1px solid black;*/
+		border-bottom: 1px solid black;
+	}
+	
+	
+</style>
+
+<script>
+	var tree = null;
+	var dnd=null;
+	var TITLEBAR=null;
+	var TASKBAR=null;
+	var SCHEDULEBAR=null;
+	var TREEBAR=null;
+	var TASKSELECTION=null;
+	var BARTOP=null;
+	var MONTHBAR=null;
+	var DATEBAR=null;
+	var TARGETBODY=null;
+	
+	var targetBar1=null;
+	var targetBar2=null;	
+
+	var target1=null;
+	var target2=null;
+
+	function init() {
+		TITLEBAR = new xbkLayer();
+		with( TITLEBAR ) {
+			setLeft(0);
+			setTop(0);
+			setWidth(xbkUtil.APP_WIDTH());
+			setHeight(75);
+			setBgColor("silver");
+			setVis("show");
+			setInnerHTML(sLOGO);
+		}
+		BARTOP = new xbkLayer();
+		with( BARTOP ) {
+			setLeft(0);
+			setTop(75);
+			setWidth(xbkUtil.APP_WIDTH());
+			setHeight(15);
+			setBgColor("navy");
+			setVis( "show" );
+		}
+		
+		SCHEDULEBAR = new xbkLabel();
+		with( SCHEDULEBAR ) {
+			setLeft(150);
+			setTop(90);
+			setWidth(xbkUtil.APP_WIDTH()-350);
+			setHeight(20);
+			setBgColor("blue");
+			setVis( "show" );
+			setTextAlign("left");
+			cellspacing = 2;
+			setText("Schedule");
+			setStyle("mySubTitle2");
+			setBorderLeft( 1,"black");
+		}
+		
+		TREEBAR = new xbkLabel();
+		with( TREEBAR ) {
+			setLeft(xbkUtil.APP_WIDTH()-200);
+			setTop(90);
+			setWidth(200);
+			setHeight(20);
+			setBgColor("blue");
+			setVis( "show" );
+			setTextAlign("left");
+			cellspacing = 2;
+			setBorderLeft( 1,"black");
+			setText("Resources");
+			setStyle("mySubTitle2");		
+		}
+		
+		var aHeading = new Array("Tasks");
+		TASKSELECTION = new xbkList( "TASKSELECTION", null );
+		with( TASKSELECTION ) {
+			setLeft(0);
+			setTop(90);
+			setWidth(150);
+			setHeight( xbkUtil.APP_HEIGHT()-90);
+			setBorderRight( 1,"black");
+			//setBgColor("");
+			setVis( "show" );
+			xbkList_width = (ns6)?150:149;
+			addHeading(aHeading);	
+			addRow( "a1", ["1 Task One"]);
+			addRow( "a2", ["2 Task Two"]);
+			addRow( "a3", ["3 Task Three"]);
+			addRow( "a4", ["4 Task Four"]);
+			draw();
+		}
+
+		
+		MONTHBAR = new xbkLayer();
+		with( MONTHBAR ) {
+			setLeft(150);
+			setTop((ie)?111:110);
+			setWidth(xbkUtil.APP_WIDTH()-350);
+			setHeight(20);
+			setBgColor("silver");
+			setVis( "show" );
+			setInnerHTML(MONTHS);
+		}
+		DATEBAR = new xbkLayer();
+		with( DATEBAR ) {
+			setLeft(150);
+			setTop((ie)?131:130);
+			setWidth(xbkUtil.APP_WIDTH()-350);
+			setHeight(15);
+			setBgColor("silver");
+			setVis( "show" );
+			setInnerHTML(DATES);
+		}
+		
+		TARGETBODY = new xbkLayer();
+		with( TARGETBODY ) {
+			setLeft(150);
+			setTop((ie)?146:145);
+			setWidth(xbkUtil.APP_WIDTH()-350);
+			setHeight(xbkUtil.APP_HEIGHT()-146);
+			setBgColor("white");
+			setVis( "show" );
+		}
+
+		targetBar1 = new xbkLayer(TARGETBODY);
+		with( targetBar1 ) {
+			setLeft(10);
+			setTop(20);
+			setWidth(300);
+			setHeight(20);
+			setBgColor("blue");
+			setVis( "show" );
+		}
+		target1 = new xbkLayer(TARGETBODY);
+		targetBar1.target = target1;	
+		with( target1 ) {
+			setLeft(310);
+			setTop(20);
+			setWidth(150);
+			setHeight(20);
+			//setBgColor("red");
+			setVis( "show" );
+			layer.className="mySubTitle";
+		}
+
+		targetBar2 = new xbkLayer(TARGETBODY);
+		with( targetBar2 ) {
+			setLeft(40);
+			setTop(75);
+			setWidth(200);
+			setHeight(20);
+			setBgColor("blue");
+			setVis( "show" );
+		}
+
+		target2 = new xbkLayer(TARGETBODY);
+		targetBar2.target = target2;
+		with( target2 ) {
+			setLeft(240);
+			setTop(75);
+			setWidth(150);
+			setHeight(20);
+			//setBgColor("red");
+			setVis( "show" );
+			layer.className="mySubTitle";
+		}
+
+		
+		/////////////TREEE///////////////
+		tree = new xbkTree( "tree", null );
+		var root_0 = null;
+		var root_1 = null;	
+
+		var item_0 = null;
+		var item_1 = null;
+		var item_2 = null;
+		var item_3 = null;
+
+		with(tree) {
+			setLeft( xbkUtil.APP_WIDTH()-200 );
+			setTop( 111 );
+			setWidth( 200 );
+			setHeight( xbkUtil.APP_HEIGHT()-110 );
+			setBgColor("white");
+			setVis("show");
+			setImagePath("../../images/xbkTree/");
+			setBorderLeft( 1,"black");
+			root_0 = getParentNode("Development",treeClickFunc);
+			root_1 = getParentNode("C++",treeClickFunc);
+			root_2 = getParentNode("HTML",treeClickFunc);
+			with(root_0) {
+				addChildNode(root_1);
+				addChildNode(root_2);
+				bOpen = true;
+			}
+
+			item_0 = getChildNode("John",treeClickFunc);
+			item_1 = getChildNode("Lisa",treeClickFunc);
+			item_2 = getChildNode("Terry Burke",treeClickFunc)
+			
+			with(root_1) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(item_2);
+				
+			}
+			with(root_2) {
+				addChildNode(item_0);
+				addChildNode(item_1);
+				addChildNode(item_2);
+			}
+			addRoot(root_0);		
+
+			dnd = new xbkDragAndDrop();
+			dnd.addDragSource(tree);
+		
+			dnd.addTarget(targetBar2);
+			dnd.addTarget(targetBar1);
+			
+			
+			dnd.setDropTargetFunc(testDropFunc);
+			dnd.setOverTargetFunc(testOverFunc);
+			dnd.setOutTargetFunc(testOutFunc);
+			dnd.setStartDragFunc(testStartFunc);
+
+		}
+		/////////////////// END //////////////////////
+	}
+	
+		function testStartFunc (dnd,target) {
+			if(!dnd.getSelectItem()) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
+		
+		var contents =[];		
+
+		function testDropFunc(dnd,target) {
+			//target.setBgColor("silver");
+			var node=dnd.getSelectItem();
+			target.setBgColor("blue");
+			contents[contents.length]={text:node.text,id:target.id};
+
+			var text = "";
+			for(var i in contents){
+				if(contents[i].id == target.id){
+					if(text!=""){
+						text +=", ";
+					}
+					text += contents[i].text;
+				}
+			}
+			
+
+		
+			(node)?target.target.setInnerHTML(text):null;
+			dnd.setSelectItem(null);
+		}
+	
+		function testOverFunc(dnd,target) {
+			target.setBgColor("green");
+		}
+		
+		function testOutFunc(dnd,target) {
+			target.setBgColor("blue");
+		}
+		
+		function treeClickFunc(node) {
+			dnd.setSelectItem(node);
+		}
+	
+</script>
+	
+<body onload="init()" ondragstart="return false" onselectstart="return false">
+
+</body>
+
+</html>

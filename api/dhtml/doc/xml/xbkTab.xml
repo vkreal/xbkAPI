@@ -1,0 +1,72 @@
+<?xml version='1.0'?>
+<!DOCTYPE class SYSTEM "tech_ref.dtd">
+<class name="xbkTab" version="1.0" since="1.0">
+<desc>
+<![CDATA[
+The xbkTab class provides Tab Seletion options for xbkAPI web applications.
+]]>
+</desc>
+<fields>
+</fields>
+<constructor>
+<method name="xbkMenu" comment="" >
+<method_desc>  </method_desc>
+<params>
+<param name="inst" typename="String" comment="The name or id to be use for this xbkTab." />
+<param name="parent" typename="xbkLayer" comment="The parent of the xbkTab object if it has one." />
+</params>
+</method>
+</constructor>
+<methods>
+<method name="addItem" comment="" >
+<method_desc>
+<![CDATA[
+Adds an item to the Tab.
+]]>
+</method_desc>
+<params>
+<param name="text" typename="String" comment="Text that appears for the item." />
+<param name="fHandler" typename="Reference" comment="Referece to a handler function." />
+</params>
+<return typename="xbkLayer" comment="The body as a xbkLayer" ></return>
+</method>
+<method name="remove" comment="" >
+<method_desc>
+<![CDATA[
+Remove an item from the Tab.
+]]>
+</method_desc>
+<params>
+<param name="index" typename="Number" comment="Index of tab." />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="setTabBgColor" comment="" >
+<method_desc>
+<![CDATA[
+Set the background color of the tab when click on and off.
+]]>
+</method_desc>
+<params>
+<param name="sTabOn" typename="String" comment="Color when this tab has focus" />
+<param name="sTabOff" typename="String" comment="Color when this tab is off focus" />
+</params>
+<return typename="None" comment="" ></return>
+</method>
+<method name="redraw" comment="" >
+<method_desc>
+<![CDATA[
+Redraw xbkTab.
+]]>
+</method_desc>
+<params>
+</params>
+<return typename="None" comment="" ></return>
+</method>
+</methods>
+<related>
+</related>
+<examples>
+</examples>
+<extends name="xbkLayer" />
+</class>

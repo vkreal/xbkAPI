@@ -1,0 +1,71 @@
+<html>
+<script src='../src/util/xbkObject/xbkObject.js'></script>
+<script src='../src/ui/xbkLayer/xbkLayer.js'></script>
+<script src='../src/util/xbkNode/xbkNode.js'></script>
+<script src='../src/ui/xbkList/xbkList.js'></script>
+<link rel="stylesheet" type="text/css" href="../src/css/xbkList.css">
+<style>
+	h1 {
+		font-family: Verdana;
+		font-size: medium;
+		font-weight: bold;
+		color: #0099FF;
+	}
+</style>
+
+<script>
+	var list = null;
+	function init() {
+		var aHeading = new Array("Heading 1","Heading 2","Heading 3");
+		list = new xbkList( "list", null );
+		with( list ) {
+			setLeft( 150 );
+			setTop( 50 );
+			setWidth( 350 );
+			setHeight( 200 );
+			setVis( "show" );
+			//setBgColor( "yellow" );
+			setBorderLeft( 1,"black");
+			setBorderTop( 1,"black");
+			setBorderBottom( 1,"gray");
+			setBorderRight( 1,"gray");
+			addHeading( aHeading );	
+			addRow( "a1", ["row1", "row1", "row1"], xbkList_ONCLICK_HANDLER );
+			addRow( "a2", ["row2", "row2", "row2"] );
+			addRow( "a3", ["row3", "row3", "row3"] );
+			addRow( "a4", ["row4", "row4", "row4"] );
+			draw();
+		}
+	}
+	
+	function xbkList_ONCLICK_HANDLER( obj ) {
+		alert( obj.id );
+	}	
+
+	function remove() {
+		if(list.selected) {
+			list.removeRow(list.selected.id);
+		}
+	}
+	var count = 5;
+	function add() {
+		list.addRow( "a"+count, ["row"+count,"row"+count,"row"+count] );
+		count++;
+	}
+</script>
+	
+<body onload="init()">
+<h1>
+		Example  --> xbkList
+</h1>	
+	<a href="javascript:list.setWidth(list.getWidth()+5);">resize width ++</a><br>
+	<a href="javascript:list.setWidth(list.getWidth()-5);">resize width --</a><br>
+	<a href="javascript:list.setHeight(list.getHeight()+5);">resize height ++</a><br>
+	<a href="javascript:list.setHeight(list.getHeight()-5);">resize height --</a><br>
+	<a href="javascript:add();">addItem</a><br>
+	<a href="javascript:remove();">remove selected</a><br>
+	<a href="javascript:list.setVis('show');">show</a><br>
+	<a href="javascript:list.setVis('hidden');">hide</a><br>
+</body>
+
+</html>
